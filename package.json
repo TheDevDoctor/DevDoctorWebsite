@@ -5,8 +5,8 @@
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
+    "build": "env-cmd -f .env.production gatsby build",
+    "develop": "env-cmd -f .env.development gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -14,9 +14,32 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "bootstrap": "^4.6.0",
+    "env-cmd": "^10.1.0",
+    "fontsource-poppins": "^4.0.0",
+    "fontsource-source-code-pro": "^4.0.0",
+    "fontsource-source-sans-pro": "^4.0.0",
     "gatsby": "^2.26.1",
+    "gatsby-image": "^2.11.0",
+    "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-mailchimp": "^5.2.2",
+    "gatsby-plugin-react-helmet": "^3.10.0",
+    "gatsby-plugin-sass": "^3.2.0",
+    "gatsby-plugin-scroll-reveal": "0.0.7",
+    "gatsby-plugin-sharp": "^2.14.1",
+    "gatsby-source-filesystem": "^2.11.0",
+    "gatsby-source-strapi": "0.0.12",
+    "gatsby-transformer-sharp": "^2.12.0",
+    "node-sass": "^5.0.0",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-bootstrap": "^1.4.3",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^4.2.0",
+    "react-markdown": "^5.0.3",
+    "react-slick": "^0.28.0",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "prettier": "2.2.1"

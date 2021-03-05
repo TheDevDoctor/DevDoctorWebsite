@@ -1,0 +1,374 @@
+// Bootstrap overrides
+
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
+
+.btn,
+.form-control {
+
+    &:focus {
+        box-shadow: none;
+
+        &:active {
+            box-shadow: none;
+        }
+    }
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    position: relative
+}
+
+
+.btn-primary {
+    background-image: linear-gradient(160deg, #8300e9 0%, #00e2db 100%);
+    border: none;
+    font-weight: 500;
+    font-family: 'poppins';
+    border-radius: 2px;
+    padding: 12px 22px;
+
+    &:hover {
+        filter: hue-rotate(320deg);
+    }
+
+    &:active {
+        filter: hue-rotate(320deg) saturate(0.5);
+    }
+
+    &:not(:disabled):not(.disabled):active:focus,
+    .show>.btn-primary.dropdown-toggle:focus {
+        box-shadow: none;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Poppins';
+    color: #111111;
+}
+
+p {
+    color: #313131;
+    font-family: 'Open Sans';
+}
+
+.align-center {
+    align-items: center;
+    display: flex;
+}
+
+.highlight-bg {
+    background: #fbfbfb;
+}
+
+.fullstop-highlight {
+    color: #E809DD;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+// Featured Section
+#featured-section {
+    background: #fdfdfd;
+    box-shadow: inset -1px 8px 10px -7px rgba(0, 0, 0, 0.12);
+}
+
+.section-title {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.title-accent {
+    background-image: linear-gradient(-90deg, #0AFF00 0%, #00D6FF 45%, #9500F0 100%);
+    height: 5px;
+    margin-bottom: 35px;
+    border-radius: 5px;
+    width: 12%;
+    margin: auto;
+
+    &.negative {
+        background-image: linear-gradient(-90deg, #ADADAD 0%, #E3E3E3 49%, #FFFFFF 100%);
+    }
+
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-duration: .2s;
+    animation-duration: .2s;
+}
+
+.featured-container {
+    margin: 5rem 0 8rem;
+    align-items: center;
+}
+
+.featured-image-container {
+    margin-right: 100px;
+
+    &.pixel-dr {
+        margin: 0;
+    }
+
+    .featured-image {
+        max-width: 100%;
+    }
+
+    &.reverse {
+        margin-right: 0;
+        margin-left: 150px;
+    }
+}
+
+.featured-card-container {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.featured-card {
+    width: calc(100% + 240px);
+    margin-left: -240px;
+    min-height: 160px;
+    padding-bottom: 1rem !important;
+
+    .featured-card-header {
+        text-align: center;
+    }
+
+    .project-tag {
+        position: absolute;
+        max-width: 7rem;
+        left: 0;
+        top: 1rem;
+
+        img {
+            max-width: 100%;
+        }
+
+        &.reverse {
+
+            left: unset;
+            right: 0;
+
+            img {
+
+                transform: scaleX(-1);
+            }
+
+            h3 {
+                right: 9px;
+            }
+        }
+
+        h3 {
+            position: absolute;
+            top: 7px;
+            margin-left: 9px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #fffffff2;
+        }
+    }
+
+    .title-accent {
+        height: 3px;
+        margin: 1.5rem auto;
+        width: 30%;
+    }
+
+    &.reverse {
+        margin-right: -240px;
+        margin-left: 0;
+        z-index: 10;
+    }
+}
+
+.card {
+    overflow: hidden;
+    background: white;
+    padding: 2rem;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0px 12px 80px -6px rgba(79, 86, 91, 0.29);
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .featured-image-container {
+        margin-right: 0;
+    }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+
+    .featured-image-container {
+        margin: 0 2rem 2rem !important;
+    }
+
+    .featured-card {
+        margin: 0;
+
+        &.reverse {
+            margin: 0;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+    .featured-container {
+        margin: 2rem 0 5rem;
+    }
+
+    .featured-image-container {
+        margin: 0 2rem 2rem !important;
+    }
+
+    .featured-card {
+        margin: 0;
+
+        &.reverse {
+            margin: 0;
+        }
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .featured-container {
+        margin: 2rem 0 5rem;
+    }
+
+    .featured-image-container {
+        margin: 0 0 2rem !important;
+    }
+
+    .featured-card-container {
+        margin-left: -2rem;
+        margin-right: -2rem;
+    }
+
+    .title-accent {
+        width: 30%;
+    }
+
+    .featured-card {
+        margin: 0;
+        padding: 3rem 2rem;
+
+        &.reverse {
+            margin: 0;
+        }
+
+        .project-tag {
+            max-width: 5rem;
+
+            &.reverse {
+                left: 0;
+                right: unset;
+
+                img {
+                    transform: unset;
+                }
+
+            }
+
+            h3 {
+                font-size: 0.8rem;
+            }
+        }
+    }
+}
+
+// About page globals:
+
+.slick-list {
+    overflow: visible;
+}
+
+// Article Globals:
+
+.article-content {
+
+    span {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 100vw;
+
+        .youtube-wrapper {
+            position: relative;
+
+            height: 0;
+
+            &.article-width {
+                width: 800px;
+                padding-bottom: 450px;
+            }
+
+            &.wide-width {
+                min-width: 800px;
+                max-width: 1100px;
+                width: 70%;
+                padding-bottom: 38%;
+            }
+
+            .youtube-video {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+
+        }
+    }
+}
+
+@media only screen and (max-width: 860px) { 
+    .article-content {
+        span {
+            margin-top: 0;
+        
+            .youtube-wrapper {
+                &.article-width {
+                    width: 100%;
+                    padding-bottom: 56.25%;
+                }
+    
+                &.wide-width {
+                    width: 100vw;
+                    padding-bottom: 56.25%;
+                }
+    
+                .youtube-video {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+    
+    
+            }
+        }
+    }
+}

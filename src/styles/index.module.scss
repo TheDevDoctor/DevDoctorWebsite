@@ -1,0 +1,74 @@
+
+.learnMore {
+    text-align: center;
+    color: gray;
+    transition: transform 1s, color 1s;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        p {
+            margin: 0;
+            color: inherit;
+        }
+    
+        svg {
+            margin-top: -10px;
+            font-size: 18px;
+        }
+    }
+
+
+    &:hover {
+        transform: scale(1.1);
+        color: #4db2e7;
+
+        &.youtube {
+            color: #ff2a2a;
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+
+    .designerText,
+    .devText {
+        width: 520px;
+        height: 600px;
+        top: 0px;
+        position: absolute;
+    }
+
+    .designerImg {
+        left: 135px;
+    }
+
+    .coderImg {
+        right: 135px;
+    }
+
+    .description {
+        position: absolute;
+        top: 180px;
+        width: 270px;
+    }
+
+    .jobTitle {
+        font-size: 5rem;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+}
+
+@media only screen and (max-width: 576px) {
+
+}

@@ -1,0 +1,65 @@
+
+
+.fullRow {
+    height: 100%;
+}
+
+.blogItem {
+    transition: transform 0.5s;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.blogCard {
+    margin-bottom: 3rem;
+    padding: 0;
+}
+
+.link {
+    text-decoration: none !important;
+}
+
+.imgDiv {
+    background-image: url('../assets/images/dna-hand.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+}
+
+.previewContainer {
+    padding: 1.5rem 2rem;
+
+    .tag {
+        text-transform: uppercase;
+    }
+
+    h6 {
+        color: gray;
+    }
+
+    h3 {
+        margin-bottom: 1rem;
+    }
+}
+
+.dateTag {
+    margin-left: 1rem;
+    margin-top: 3rem;
+    color: gray;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .imgDiv {
+        min-height: 22rem;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .imgDiv {
+        min-height: 14rem;
+    }
+}

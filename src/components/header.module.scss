@@ -1,0 +1,40 @@
+header {
+    padding: 6px 0;
+    background: #101010;
+}
+
+.navCustom {
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none !important;
+    font-size: 16px;
+    font-family: poppins;
+
+    &:hover {
+        color: gray;
+    }
+
+    &.active {
+        color: rgb(212, 252, 255);
+    }
+
+}
+
+.socialIcons {
+    display: flex;
+    list-style-type: none;
+}
+
+.socialIcon {
+    color: white;
+    font-size: 2.5rem;
+    margin: 0 8px;
+
+    &:hover {
+        color: rgb(212, 252, 255);
+    }
+}
+
+.navbarResponsive {
+    line-height: 2.5rem;
+}

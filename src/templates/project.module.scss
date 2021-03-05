@@ -1,0 +1,233 @@
+.headerBanner {
+    background-image: radial-gradient(19% 87%, rgba(255, 255, 255, 0.53) 23%, rgba(84, 228, 255, 0.38) 100%);
+}
+
+.bannerContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 0;
+
+    h1 {
+        font-weight: bold;
+        font-size: 4rem;
+        margin: 0;
+    }
+
+    h4 {
+        font-weight: lighter;
+    }
+
+    .bannerAccent {
+        margin: 1.5rem auto;
+        width: 15%;
+    }
+
+    .imageContainer {
+        width: 70%;
+        padding-top: 2rem;
+    }
+}
+
+.section, .storySection {
+    margin: 7rem 0;
+
+    h1 {
+        font-weight: bold;
+    }
+
+    .accent {
+        margin: 1.7rem 0;
+        width: 10rem;
+    }
+}
+
+.storySection {
+    margin-bottom: 2rem;
+}
+
+.platformRow {
+    padding-top: 2rem;
+}
+
+.theMission {
+    p {
+        font-size: 2rem;
+        font-weight: lighter;
+    }
+
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    .appBackground {
+        background: #7056E6;
+        box-shadow: rgba(0, 0, 0, 0.13) 0px 0px 20px 5px inset, 0px 12px 80px -6px rgba(79, 86, 91, 0.29);
+        border-radius: 48px;
+
+        .logo {
+            width: 130px;
+            margin: 1.5rem;
+        }
+    }
+}
+
+.teamContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-left: -3rem;
+    margin-right: -3rem;
+    margin-top: 2rem;
+}
+
+.teamCard {
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .profilePic {
+        border-radius: 50%;
+    }
+
+    .textContainer {
+        margin-left: 2rem;
+
+        p {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+    }
+
+}
+
+.selected {
+    background-image: linear-gradient(45deg, rgba(88, 182, 255, 0.44) 0%, rgba(126, 255, 255, 0.23) 100%);
+}
+
+.roleDescription {
+    padding: 3rem 2rem 0;
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+.platformContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    height: 100%;
+
+    .platformCard {
+        padding: 1.5rem;
+    }
+}
+
+.platformTextContainer {
+    padding: 1rem;
+
+    h2 {
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+        font-weight: 200;
+        white-space: pre-wrap;
+    }
+}
+
+.story {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    .articleContent {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+
+        p {
+            font-size: 1.4rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            line-height: 2.2rem;
+        }
+
+        span+p {
+            margin-top: 4rem;
+        }
+
+        ol li {
+            font-family: 'Newsreader';
+            font-size: 20px;
+        }
+
+        b,
+        strong {
+            font-weight: bold;
+        }
+
+        h3 {
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        img {
+            max-width: 200px;
+            margin: 0 0 3rem;
+
+            &[src$="article-width"] {
+                width: 100%;
+                max-width: 1140px;
+            }
+
+            &[src$="wide-width"] {
+                min-width: 1140px;
+                max-width: 1400px;
+                width: 90%;
+                padding: 0 15px;
+            }
+
+            &[src$="screen-width"] {
+                width: 100vw;
+                max-width: 2200px;
+            }
+        }
+
+        .articleBreak {
+            margin: 2rem 0 4rem;
+            width: 30%;
+        }
+    }
+}
+
+.articleWidth {
+    max-width: 1140px;
+    width: 1140px;
+    padding: 0 15px;
+}
+
+.wideWidth {
+    min-width: 800px;
+    max-width: 1200px;
+    width: 90%;
+}
+
+.screenWidth {
+    width: 100vw;
+    max-width: 2200px;
+}

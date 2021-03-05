@@ -1,0 +1,42 @@
+
+
+a {
+    width: 100%;
+}
+
+.youtubeCard {
+    background-image: url('../assets/images/investing-in-CRISPR.png');
+    border-radius: 16px;
+    padding-bottom: 56.25%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: filter 1s;
+}
+
+.cardContainer {
+    position: relative;
+
+    &:hover {
+
+        .youtubeCard {
+            filter: blur(2px) saturate(1.5);
+        }
+
+        .logoYoutube {
+            opacity: 1;
+        }
+
+    }
+}
+
+.logoYoutube {
+    position: absolute;
+    top: calc(50% - 3.5rem);
+    left: calc(50% - 3.5rem);
+    color: #ff2a2a;
+    opacity: 0;
+    font-size: 7rem;
+    transition: opacity 1s;
+}

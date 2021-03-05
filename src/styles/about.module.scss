@@ -1,0 +1,413 @@
+.textContainer {
+    margin-right: 6rem;
+
+    h1 {
+        font-weight: bold;
+    }
+
+    h4 {
+        font-weight: 300;
+        margin-bottom: 2rem;
+    }
+
+    &.reverse {
+        margin-left: 6rem;
+        margin-right: 0;
+    }
+}
+
+.sectionPadding {
+    padding: 5rem 0;
+    overflow: hidden;
+}
+.otherSectionPadding {
+    padding: 5rem 0;
+    overflow: hidden;
+}
+
+.aboutMeSection {
+    padding-top: 2rem;
+}
+
+.mediaPadding {
+    padding: 5rem 0 21rem;
+    margin-bottom: -17rem;
+    overflow: hidden;
+}
+
+.aboutAccent {
+    margin: 1.5rem 0;
+    width: 30%;
+}
+
+.aboutHeroImage {
+    max-width: 100%;
+    margin-top: 5rem;
+}
+
+.heroImageContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.devImageContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.devImage {
+    max-width: 120%;
+    margin-top: 3rem;
+}
+
+.aboutRow {
+    padding-top: 5rem;
+}
+
+.mediaTitle {
+    text-align: center;
+    font-weight: bold;
+}
+
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+
+    .otherCard {
+        margin: 1rem;
+        padding: 1rem 2rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        min-width: 300px;
+        transition: background 500ms;
+
+        h2 {
+            margin: 0;
+        }
+
+        &:hover {
+            background: #d9fdff !important;
+        }
+
+        &.selected {
+            background: #c5e9ff8f;
+        }
+
+        .cardIcon {
+            font-size: 4rem;
+            margin-right: 1rem;
+
+            &.youtube {
+                color: #ff2a2a;
+            }
+        }
+    }
+}
+
+.doctorImageCard {
+    background-image: url('../assets/images/nhs-nightingale.jpeg');
+    border-radius: 16px;
+    height: 340px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+}
+
+.mediaCard {
+    margin: 1rem;
+    height: 21rem;
+    padding: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    &.square {
+        width: 21rem;
+    }
+
+    &.landscape {
+        width: 39rem;
+    }
+
+    &.dvtv {
+        background-image: url('../assets/images/dvtv-img.jpg');
+    }
+
+    &.jessKatagInterview {
+        background-image: url('../assets/images/jess-katag-interview.jpg');
+    }
+
+    &.sgulTalk {
+        background-image: url('../assets/images/sgul-medtech-conf.jpeg');
+    }
+
+    &.nightingale {
+        background-image: url('../assets/images/nhs-nightingale.jpeg');
+    }
+
+    &.bleepr1 {
+        background-image: url('../assets/images/bleepr-social-img-1.jpeg');
+    }
+
+
+
+
+    .tag {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        text-decoration: none;
+        color: white;
+        background: #00000054;
+        padding: 2px 8px;
+        border-radius: 5px 0;
+    }
+}
+
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .textContainer {
+        margin-right: 2rem;
+
+        &.reverse {
+            margin-left: 2rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+
+    .textContainer {
+        margin-right: 0;
+
+        &.reverse {
+            margin-left: 0.5rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .aboutAccent {
+            margin: 1rem 0;
+        }
+    }
+
+    .doctorImageCard {
+        height: 280px;
+        background-position: center left;
+    }
+
+    .devImage {
+        max-width: 160%;
+        position: relative;
+    }
+
+    .mediaCard {
+        height: 16rem;
+
+        &.square {
+            width: 16rem;
+        }
+
+        &.landscape {
+            width: 29rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .textContainer {
+        padding: 2rem 3rem;
+        margin-right: 0;
+
+        &.reverse {
+            margin-left: 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .aboutAccent {
+            margin: 1rem 0;
+        }
+
+        &.otherTextContainer {
+            padding: 0 3rem;
+        }
+    }
+
+    .sectionPadding {
+        padding: 4rem 0 0;
+    }
+
+    .otherSectionPadding {
+        padding: 2rem 0;
+    }
+
+    .aboutHeroImage {
+        width: 80%;
+        max-width: 25rem;
+        margin-top: 2rem;
+
+    }
+
+    .doctorImageContainer {
+        padding: 0 5rem;
+    }
+
+    .doctorImageCard {
+        height: 320px;
+        margin-bottom: 2rem;
+    }
+
+    .devImage {
+        width: 80%;
+        margin: 0;
+    }
+
+    .mediaCard {
+        height: 16rem;
+
+        &.square {
+            width: 16rem;
+        }
+
+        &.landscape {
+            width: 29rem;
+        }
+    }
+
+    .cardContainer {
+        .otherCard {
+            min-width: unset;
+            padding: 1rem;
+            margin: 10px 0;
+
+            .cardIcon {
+                font-size: 2rem;
+                margin: 0;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 576px) {
+
+    .textContainer {
+        padding: 2rem 1rem;
+        margin-right: 0;
+
+        &.reverse {
+            margin-left: 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .aboutAccent {
+            margin: 1rem 0;
+        }
+
+        &.otherTextContainer {
+            padding: 2rem 1rem 1rem;
+        }
+    }
+
+    .sectionPadding {
+        padding: 2rem 0 0;
+    }
+
+    .otherSectionPadding {
+        padding: 2rem 0;
+    }
+
+    .aboutHeroImage {
+        height: 330px;
+        width: 90%;
+        object-fit: cover;
+        margin-top: 2rem;
+    }
+
+    .doctorImageContainer {
+        padding: 0 1rem;
+    }
+
+    .doctorImageCard {
+        height: 240px;
+        margin-bottom: 1rem;
+    }
+
+    .devImage {
+        width: 108vw;
+        margin: 0;
+        right: 1vw;
+        position: relative;
+    }
+
+    .aboutAccent {
+        width: 40%;
+    }
+
+    .mediaCard {
+        margin: 0.2rem;
+
+        height: 9rem;
+
+        &.square {
+            width: 9rem;
+        }
+
+        &.landscape {
+            width: 16rem;
+        }
+
+        .tag {
+            font-size: 0.7rem;
+        }
+    }
+
+    .cardContainer {
+        flex-direction: row;
+        justify-content: space-evenly;
+
+        .otherCard {
+            min-width: unset;
+            padding: 1rem;
+            margin: 10px 0;
+
+            .cardIcon {
+                font-size: 2rem;
+                margin: 0;
+            }
+        }
+    }
+
+    .mediaPadding {
+        padding: 2rem 0 19rem;
+    }
+
+}

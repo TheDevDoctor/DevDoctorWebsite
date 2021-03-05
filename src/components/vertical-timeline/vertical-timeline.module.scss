@@ -1,0 +1,171 @@
+.lineContainer {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+
+    .line {
+        background: #1d2225;
+        height: 100%;
+        width: 5px;
+    }
+
+    .circle {
+        width: 4rem;
+        height: 4rem;
+        border: 5px solid #1d2225;
+        position: absolute;
+        border-radius: 1rem;
+        background: white;
+        top: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            max-width: 85%;
+            max-height: 90%;
+        }
+
+        .date {
+            position: absolute;
+            right: -7rem;
+            top: -1.5rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #5a5a5a;
+
+            &.reverse {
+                left: -7rem;
+                right: unset;
+            }
+        }
+    }
+}
+
+.cardContainer {
+    padding: 4rem 0;
+
+    .projectCard {
+        border-left: 6px solid;
+        padding: 2rem 2rem 1rem;
+
+        &.reverse {
+            border-right: 6px solid;
+            border-left: none;
+        }
+    }
+
+}
+
+.featuredDescription {
+    white-space: pre-wrap;
+}
+
+
+.learnMore {
+    text-align: center;
+    color: gray;
+    transition: transform 1s, color 1s;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+
+        p {
+            margin: 0;
+            color: inherit;
+        }
+
+        svg {
+            margin-top: -10px;
+            font-size: 18px;
+        }
+    }
+
+
+    &:hover {
+        transform: scale(1.1);
+        color: #4db2e7;
+
+        &.youtube {
+            color: #ff2a2a;
+        }
+    }
+}
+
+.header {
+
+    h2 {
+        font-weight: lighter;
+        font-size: 1.2rem;
+    }
+
+
+    .accent {
+        margin: 1rem 0;
+        width: 30%;
+    }
+}
+
+.imageContainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.smallScreenContainer {
+    margin-top: 4rem;
+
+    .date {
+        font-weight: bold;
+        font-size: 1.3rem;
+        color: #5a5a5a;
+        margin-left: .5rem;
+        margin-bottom: 1rem;
+    }
+}
+
+
+
+@media only screen and (max-width: 576px) {
+    .lineContainer {
+
+        .line {
+            width: 3px;
+        }
+
+        .circle {
+            width: 3rem;
+            height: 3rem;
+            border: 3px solid #1d2225;
+
+            .date {
+                display: none;
+            }
+        }
+    }
+
+
+    .cardContainer {
+        padding: 2rem 0;
+
+        .projectCard {
+            border-left: none;
+            border-top: 4px solid;
+            padding: 2rem 1rem 1rem;
+
+            &.reverse {
+                border-right: none;
+
+                // border-left: none;
+            }
+        }
+
+    }
+}

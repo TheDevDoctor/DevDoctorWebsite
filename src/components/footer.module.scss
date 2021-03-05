@@ -1,0 +1,125 @@
+.footer {
+    padding: 120px 12px 32px !important;
+    background: #101010;
+}
+
+.socialIcon {
+    color: white;
+    font-size: 1.5rem;
+
+    &:hover {
+        color: rgb(212, 252, 255);
+    }
+}
+
+.socialButton {
+    margin: 0 4px;
+    box-shadow: 0 4px 0 0 #1f2325;
+}
+
+.createdBy {
+    font-size: 0.9rem !important;
+    color: white;
+}
+
+.newsLetterContainer {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.newsletterCard {
+    z-index: 99;
+    margin-bottom: -5rem;
+    align-items: center;
+    width: 900px;
+
+    p {
+        margin-bottom: 3rem;
+        width: 80%;
+
+        &.wentWrong {
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #d41a1a;
+        }
+    }
+}
+
+.form {
+    width: 100%;
+    display: flex;
+}
+
+.email {
+    min-height: 100%;
+    padding-left: 2rem !important;
+}
+
+
+.subscribe {
+    padding: 16px 22px !important;
+}
+
+.accent {
+    margin: 0.5rem auto 1rem !important;
+    width: 20% !important;
+}
+
+
+@media only screen and (min-width: 1200px) {
+    .newsletterCard {
+        padding: 4rem 5rem !important;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .newsletterCard {
+        padding: 3rem 4rem !important;
+        width: 720px;
+
+        p {
+            width: 80%;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .newsletterCard {
+        padding: 3rem 4rem !important;
+        width: 720px;
+
+        p {
+            width: 80%;
+        }
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .socialButtons {
+        flex-direction: row !important;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+
+    .socialButtons {
+        flex-direction: row !important;
+        margin: auto;
+    }
+
+    .newsletterCard {
+        p {
+            width: unset;
+        }
+    }
+
+    .accent {
+        width: 30% !important;
+    }
+
+    .footer {
+        padding: 115px 12px 40px !important;
+    }
+}

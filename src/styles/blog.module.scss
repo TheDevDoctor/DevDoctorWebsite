@@ -1,0 +1,19 @@
+.featuredSection {
+    padding: 5rem 0 2rem;
+}
+
+.blogContainer {
+    max-width: 960px;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .featuredSection {
+        padding: 2rem 0 2rem;
+    }   
+}
+
+@media only screen and (max-width: 576px) {
+    .featuredSection {
+        padding: 2rem 0 2rem;
+    }   
+}
