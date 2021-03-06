@@ -15,9 +15,14 @@
     justify-content: space-around;
     align-items: center;
 
-    img {
+    .sliderImg {
+        width: 80vw;
         max-height: 75%;
         max-width: 60%;
+
+        picture > img {
+            object-fit: contain !important;
+        }
     }
 }
 
@@ -28,7 +33,7 @@
 
 @media only screen and (max-width: 576px) {
     .imgContainer {
-        img {
+        .sliderImg {
             max-height: 100%;
             max-width: 80%;
         }

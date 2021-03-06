@@ -2,6 +2,7 @@
 import React from 'react'
 import { Container, Col } from 'react-bootstrap'
 import { Link } from 'gatsby'
+import Img from 'gatsby-image';
 
 // Components
 import Layout from '../components/layout'
@@ -18,7 +19,7 @@ import { IoChevronDown, IoLogoYoutube } from 'react-icons/io5'
 // Styles
 import indexStyles from '../styles/index.module.scss'
 
-const HomePage = () => {
+const HomePage = ({data}) => {
   const spacerHeightTemporary = {
     height: '100px'
   }
@@ -41,12 +42,12 @@ const HomePage = () => {
           {/* Featured 1 */}
           <div className="row featured-container">
             <Col lg={8}>
-              <div className="featured-image-container">
-                <img className="featured-image" src={BleeprFeaturedImg}></img>
+              <div className="featured-image-container" data-sal="slide-right" data-sal-delay="500" data-sal-duration="1000">
+                <Img className="featured-image" fluid={data.bleeprFeatured.childImageSharp.fluid}></Img>
               </div>
             </Col>
             <Col lg={4}>
-              <div className="featured-card-container">
+              <div className="featured-card-container" data-sal="slide-left" data-sal-duration="1000">
                 <div className="featured-card card">
                   <div className="project-tag">
                     <img src={Tag}></img>
@@ -86,7 +87,7 @@ const HomePage = () => {
           {/* Featured 2 */}
           <div className="row featured-container">
             <Col lg={4}>
-              <div className="featured-card-container">
+              <div className="featured-card-container" data-sal="slide-right" data-sal-delay="500" data-sal-duration="1000">
                 <div className="card featured-card reverse">
                   <div className="project-tag reverse">
                     <img src={Tag}></img>
@@ -113,9 +114,9 @@ const HomePage = () => {
                 </div>
               </div>
             </Col>
-            <Col xs={{ span: 12, order: 'first' }} lg={{ span: 8, order: 'last' }}>
+            <Col xs={{ span: 12, order: 'first' }} lg={{ span: 8, order: 'last' }} data-sal="slide-left" data-sal-duration="1000">
               <div className={`featured-image-container reverse`}>
-                <YoutubePreview imageURL={CrisprImage} link="https://youtu.be/iurulR5wxis"></YoutubePreview>
+                <YoutubePreview fluidImage={data.crisprFeatured.childImageSharp.fluid} link="https://youtu.be/iurulR5wxis"></YoutubePreview>
               </div>
             </Col>
           </div>
@@ -124,12 +125,12 @@ const HomePage = () => {
           {/* Featured 3 */}
           <div className="row featured-container">
             <Col lg={8}>
-              <div className="featured-image-container pixel-dr">
-                <img className="featured-image" src={PixelDrGame}></img>
+              <div className="featured-image-container pixel-dr" data-sal="slide-right" data-sal-delay="500" data-sal-duration="1000">
+              <Img className="featured-image" fluid={data.pixelDrFeatured.childImageSharp.fluid}></Img>
               </div>
             </Col>
             <Col lg={4}>
-              <div className="featured-card-container">
+              <div className="featured-card-container" data-sal="slide-left" data-sal-duration="1000">
                 <div className="featured-card card">
                   <div className="project-tag">
                     <img src={Tag}></img>
@@ -168,6 +169,35 @@ const HomePage = () => {
 
   )
 }
+
+export const query = graphql`
+  query {
+    bleeprFeatured: file(relativePath: {eq: "bleepr-featured-img.png"})
+      {
+        childImageSharp {
+          fluid(maxWidth: 590, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    pixelDrFeatured: file(relativePath: {eq: "pixeldr-game.png"})
+    {
+      childImageSharp {
+          fluid(maxWidth: 590, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+    }
+    crisprFeatured: file(relativePath: {eq: "investing-in-CRISPR.png"})
+    {
+      childImageSharp {
+          fluid(maxWidth: 560, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+    }
+  }
+`
 
 export default HomePage
 

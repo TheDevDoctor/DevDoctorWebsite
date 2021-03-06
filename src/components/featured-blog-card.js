@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import BackgroundImage from 'gatsby-background-image'
 
 // Styles
 
@@ -10,7 +11,7 @@ const BlogFeaturedCard = (props) => {
 
     return (
         <Link to={featuredArticle.slug}>
-            <div className={`card ${styles.featuredCard}`} style={{backgroundImage: `url(${featuredArticle.coverImage.image.publicURL})` }} data-sal="zoom-in" data-sal-duration="1000">
+            <BackgroundImage className={`card ${styles.featuredCard}`} fluid={featuredArticle.coverImage.image.childImageSharp.fluid} data-sal="zoom-in" data-sal-duration="1000">
                 <div className={styles.cover}>
                     <h3>{featuredArticle.title}</h3>
                     <h6>{featuredArticle.writer.name} · {featuredArticle.publishedAt}</h6>
@@ -20,7 +21,7 @@ const BlogFeaturedCard = (props) => {
                         {featuredArticle.description}
                     </p>
                 </div>
-            </div>
+            </BackgroundImage>
         </Link>
     )
 }

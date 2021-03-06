@@ -3,14 +3,11 @@ import React from 'react'
 import { Col, Row } from 'react-bootstrap'
 import { IoChevronDown } from 'react-icons/io5'
 import { graphql, Link, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image';
 
 import styles from './vertical-timeline.module.scss'
 
-// Images
-import BleeprB from '../../assets/images/bleepr-b.png'
-import BleeprImg from '../../assets/images/bleepr-featured-img.png'
-import PixelDrChar from '../../assets/images/pixeldr-character.png'
-import PixelDrGame from '../../assets/images/pixeldr-game.png'
+
 
 const VerticalTimeline = () => {
 
@@ -28,11 +25,21 @@ const VerticalTimeline = () => {
                             backgroundColor
                             publishedAt(formatString: "MMM YYYY")
                             previewImage {
-                                publicURL
-                            }
+                                childImageSharp {
+                                        fluid(maxWidth: 500, quality: 100) {
+                                            ...GatsbyImageSharpFluid
+                                        }
+                                    }
+                                }
+                            
                             appLogo {
-                                publicURL
-                            }
+                                childImageSharp {
+                                        fluid(maxWidth: 50, quality: 100) {
+                                            ...GatsbyImageSharpFluid
+                                        }
+                                    }
+                                }
+                            
                         }
                     }
                 }
@@ -51,7 +58,7 @@ const VerticalTimeline = () => {
                         <div className={`${styles.smallScreenContainer} d-xs-flex d-sm-flex d-md-none d-lg-none d-xl-none`} data-sal="zoom-in">
                             <div className={styles.date}>{project.publishedAt}</div>
                             <div className={`${styles.imageContainer}`}>
-                                <img src={project.previewImage.publicURL}></img>
+                                <Img fluid={project.previewImage.childImageSharp.fluid} className={styles.previewImg}></Img>
                             </div>
                         </div>
 
@@ -81,15 +88,15 @@ const VerticalTimeline = () => {
                         <div className={styles.lineContainer}>
                             <div className={styles.line}></div>
                             <div className={styles.circle} style={{ background: project.backgroundColor }} data-sal="zoom-in" data-sal-duration="1000">
-                                <img src={project.appLogo.publicURL}></img>
+                                <Img fluid={project.appLogo.childImageSharp.fluid} className={styles.logoImage}></Img>
 
                                 <div className={`${styles.date} ${index % 2 > 0 ? styles.reverse : null}`}>{project.publishedAt}</div>
                             </div>
                         </div>
                     </Col>
-                    <Col xs={0} md={{span: 5, order: index % 2 > 0 ? 'first' : 'last' }} className="d-none d-md-flex">
-                        <div className={styles.imageContainer}>
-                            <img src={project.previewImage.publicURL} data-sal={index % 2 > 0 ? 'slide-right' : 'slide-left'} data-sal-duration="1000" data-sal-delay="500"></img>
+                    <Col xs={0} md={{ span: 5, order: index % 2 > 0 ? 'first' : 'last' }} className="d-none d-md-flex">
+                        <div className={styles.imageContainer} data-sal={index % 2 > 0 ? 'slide-right' : 'slide-left'} data-sal-duration="1000" data-sal-delay="500">
+                            <Img fluid={project.previewImage.childImageSharp.fluid} className={styles.previewImg}></Img>
                         </div>
                     </Col>
                 </Row>)

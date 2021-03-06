@@ -2,6 +2,8 @@
 import React from 'react'
 import { IoLogoYoutube } from "react-icons/io5";
 
+import BackgroundImage from 'gatsby-background-image'
+
 // Styles
 import youtubeStyles from './youtube-preview-card.module.scss'
 
@@ -12,7 +14,7 @@ const YoutubePreview = (props) => {
     return (
         <a href={props.link} target="_blank">
             <div className={youtubeStyles.cardContainer}>
-                <div className={`card ${youtubeStyles.youtubeCard}`} style={{backgroundImage: `Url(${props.imageURL})`}}></div>
+                <BackgroundImage className={`card ${youtubeStyles.youtubeCard}`} fluid={props.fluidImage}></BackgroundImage>
                 <IoLogoYoutube className={youtubeStyles.logoYoutube}></IoLogoYoutube>
 
             </div>

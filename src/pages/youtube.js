@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Col, Row } from 'react-bootstrap'
 import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image';
 
 // components
 import YoutubePreview from '../components/youtube-preview-card'
@@ -16,31 +17,8 @@ import styles from '../styles/youtube.module.scss'
 
 import PixelDrGame from '../assets/images/pixeldr-game.png'
 
-const YouTubePage = () => {
-    const youtubeVideos = useStaticQuery(graphql`
-    query {
-        allStrapiYoutubeVideo (
-            sort: {
-            fields: publishedAt
-            order: DESC
-            }
-        ) {
-            edges {
-                node {
-                        title
-                        category {
-                        name
-                        }
-                        thumbnail {
-                            publicURL
-                        }
-                        description
-                        publishedAt
-                        videoLink
-                    }
-                }
-            }
-        }`)
+const YouTubePage = ({ data }) => {
+    const youtubeVideos = data.allStrapiYoutubeVideo
 
     const youtubeSEO = {
         metaTitle: 'Youtube Channel - The Dev Doctor',
@@ -67,8 +45,8 @@ const YouTubePage = () => {
                         </p>
                             </div>
                         </Col>
-                        <Col xs={{ span: 12, order: 'first' }} md={{span:6, order: 'last'}} className="align-center">
-                            <img src={DevDocTV} className={styles.devdoctv} data-sal="slide-left" data-sal-duration="1000"></img>
+                        <Col xs={{ span: 12, order: 'first' }} md={{ span: 6, order: 'last' }} className="align-center">
+                            <Img fluid={data.heroImage.childImageSharp.fluid} className={styles.devdoctv} data-sal="slide-left" data-sal-duration="1000"></Img>
                         </Col>
                     </Row>
 
@@ -84,12 +62,12 @@ const YouTubePage = () => {
                         </Col>
                     </Row>
 
-                    {youtubeVideos.allStrapiYoutubeVideo.edges.map((edge, index) => {
+                    {youtubeVideos.edges.map((edge, index) => {
                         const video = edge.node;
                         return (
                             <Row className={styles.videoRow} key={index}>
                                 <Col md={6} className="align-center" data-sal="slide-right" data-sal-duration="1000">
-                                    <YoutubePreview imageURL={edge.node.thumbnail.publicURL} link={edge.node.videoLink}></YoutubePreview>
+                                    <YoutubePreview fluidImage={edge.node.thumbnail.childImageSharp.fluid} link={edge.node.videoLink}></YoutubePreview>
                                 </Col>
                                 <Col md={6} className="align-center" data-sal="slide-left" data-sal-duration="1000">
                                     <div className={`${styles.previewContainer}`}>
@@ -109,5 +87,42 @@ const YouTubePage = () => {
         </Layout>
     )
 }
+
+export const query = graphql`
+  query {
+    heroImage: file(relativePath: {eq: "devdoc-tv.png"})
+      {
+        childImageSharp {
+          fluid(maxWidth: 540, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      allStrapiYoutubeVideo (
+            sort: {
+            fields: publishedAt
+            order: DESC
+            }
+        ) {
+        edges {
+            node {
+                    title
+                    category {
+                    name
+                    }
+                    thumbnail {
+                        childImageSharp {
+                            fluid(maxWidth: 465, quality: 100) {
+                                ...GatsbyImageSharpFluid
+                            }
+                        }
+                    }
+                    description
+                    publishedAt
+                    videoLink
+                }
+            }
+        }
+    }`
 
 export default YouTubePage

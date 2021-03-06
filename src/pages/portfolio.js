@@ -1,6 +1,7 @@
 import React from 'react'
 import Slider from 'react-slick';
 import styled from 'styled-components'
+import Img from 'gatsby-image';
 
 import Footer from '../components/footer'
 import Layout from '../components/layout'
@@ -10,10 +11,7 @@ import { Row, Container, Col } from 'react-bootstrap'
 // Styles
 import styles from '../styles/portfolio.module.scss'
 
-// Images
-import BleeprImg from '../assets/images/bleepr-featured-img.png'
-import PixelDrGame from '../assets/images/pixeldr-game.png'
-import DataDocsFeatured from '../assets/images/data-docs-featured.png'
+// Components
 import VerticalTimeline from '../components/vertical-timeline/vertical-timeline';
 
 
@@ -50,7 +48,7 @@ const SliderWrap = styled.div`
     }`
 
 
-const PortfolioPage = () => {
+const PortfolioPage = ({data}) => {
     const sliderSettings = {
         dots: true,
         infinite: true,
@@ -75,17 +73,17 @@ const PortfolioPage = () => {
                 <Slider {...sliderSettings} className={styles.slider}>
                     <div className={styles.slide}>
                         <div className={styles.imgContainer}>
-                            <img src={BleeprImg}></img>
+                            <Img fluid={data.bleeprFeatured.childImageSharp.fluid} className={styles.sliderImg}/>
                         </div>
                     </div>
                     <div className={styles.slide}>
                         <div className={styles.imgContainer}>
-                            <img src={PixelDrGame}></img>
+                            <Img fluid={data.pixelDrFeatured.childImageSharp.fluid} className={styles.sliderImg}/>
                         </div>
                     </div>
                     <div className={styles.slide}>
                         <div className={styles.imgContainer}>
-                            <img src={DataDocsFeatured}></img>
+                            <Img fluid={data.dataDocFeatured.childImageSharp.fluid} className={styles.sliderImg}/>
                         </div>
                     </div>
                 </Slider>
@@ -101,5 +99,34 @@ const PortfolioPage = () => {
         </Layout>
     )
 }
+
+export const query = graphql`
+  query {
+    bleeprFeatured: file(relativePath: {eq: "bleepr-featured-img.png"})
+      {
+        childImageSharp {
+          fluid(maxWidth: 1000, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    pixelDrFeatured: file(relativePath: {eq: "pixeldr-game.png"})
+    {
+      childImageSharp {
+          fluid(maxWidth: 1000, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+    }
+    dataDocFeatured: file(relativePath: {eq: "data-docs-featured.png"})
+    {
+      childImageSharp {
+          fluid(maxWidth: 1000, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+    }
+  }
+`
 
 export default PortfolioPage

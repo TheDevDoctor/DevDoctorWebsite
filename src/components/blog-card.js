@@ -1,4 +1,5 @@
 import React from 'react'
+import BackgroundImage from 'gatsby-background-image'
 
 // Styles
 import styles from './blog-card.module.scss'
@@ -17,9 +18,7 @@ const BlogCard = (props) => {
                 <div className={`${styles.blogCard} card`}>
                     <Row noGutters={true} className={styles.fullRow}>
                         <Col xs={12}  md={{ span: 6, order: props.index % 2 === 0 ? 'first' : 'last' }}>
-                            <div className={styles.imgDiv} style={{ backgroundImage: `url(${blogData.coverImage.image.publicURL})` }}>
-
-                            </div>
+                            <BackgroundImage className={styles.imgDiv} fluid={blogData.coverImage.image.childImageSharp.fluid}></BackgroundImage>
                         </Col>
                         <Col xs={12} md={6}>
                             <div className={styles.previewContainer}>

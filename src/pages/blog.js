@@ -36,8 +36,13 @@ const BlogPage = () => {
                         }
                         coverImage {
                             image {
-                                publicURL
+                                childImageSharp {
+                                    fluid(maxWidth: 930, quality: 100) {
+                                        ...GatsbyImageSharpFluid
+                                    }
+                                }
                             }
+                            
                         }
                     }
                 }
@@ -53,7 +58,7 @@ const BlogPage = () => {
     }
 
     return (
-        <Layout seo={ blogSEO }>
+        <Layout seo={blogSEO}>
             <Container className={blogStyles.blogContainer}>
                 <Row className={blogStyles.featuredSection}>
                     <Col xs={12}>
