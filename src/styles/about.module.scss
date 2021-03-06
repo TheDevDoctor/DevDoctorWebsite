@@ -41,6 +41,7 @@
 }
 
 .aboutHeroImage {
+    width: 30rem;
     max-width: 100%;
     margin-top: 5rem;
 }
@@ -56,6 +57,7 @@
 }
 
 .devImage {
+    width: 100vw;
     max-width: 120%;
     margin-top: 3rem;
 }
@@ -109,7 +111,6 @@
 }
 
 .doctorImageCard {
-    background-image: url('../assets/images/nhs-nightingale.jpeg');
     border-radius: 16px;
     height: 340px;
     width: 100%;
@@ -210,6 +211,7 @@
     }
 
     .devImage {
+        width: 160%;
         max-width: 160%;
         position: relative;
     }

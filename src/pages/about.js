@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import Slider from 'react-slick';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import Img from 'gatsby-image';
+import BackgroundImage from 'gatsby-background-image'
 
 // Components
-import Footer from '../components/footer'
-import Layout from '../components/layout'
+import Footer from '../components/footer';
+import Layout from '../components/layout';
 
 // Images
-import aboutHeroImage from '../assets/images/about-hero-img.png'
-import aboutDevImage from '../assets/images/dev-image.png'
+
+import aboutDevImage from '../assets/images/dev-image.png';
 import { IoAccessibility, IoLibrary, IoLogoYoutube, IoSchool } from "react-icons/io5";
 
 //Styles
@@ -30,8 +32,8 @@ const SliderWrap = styled.div`
 `
 
 
-const AboutPage = () => {
-    
+const AboutPage = ({ data }) => {
+
     const aboutSEO = {
         metaTitle: 'About Me',
         metaDescription: 'Everything about me. Doctor, developer, youtube, research, tech.'
@@ -101,7 +103,7 @@ const AboutPage = () => {
                         </Col>
                         <Col xs={12} md={6}>
                             <div className={aboutStyles.heroImageContainer}>
-                                <img src={aboutHeroImage} className={aboutStyles.aboutHeroImage}></img>
+                                <Img className={aboutStyles.aboutHeroImage} fluid={data.aboutHeroImage.childImageSharp.fluid}></Img>
                             </div>
                         </Col>
                     </Row>
@@ -130,7 +132,7 @@ const AboutPage = () => {
                         </Col>
                         <Col xs={{ span: 12, order: 'first' }} md={{ span: 6, order: 'first' }}>
                             <div className={aboutStyles.doctorImageContainer}>
-                                <div className={`${aboutStyles.doctorImageCard} card`}></div>
+                                <BackgroundImage className={`${aboutStyles.doctorImageCard} card`} fluid={data.nhsImage.childImageSharp.fluid}></BackgroundImage>
                             </div>
                         </Col>
                     </Row>
@@ -157,7 +159,7 @@ const AboutPage = () => {
                         </Col>
                         <Col xs={{ span: 12, order: 'first' }} md={{ span: 6, order: 'last' }}>
                             <div className={aboutStyles.devImageContainer}>
-                                <img src={aboutDevImage} className={aboutStyles.devImage}></img>
+                                <Img className={aboutStyles.devImage} fluid={data.devImage.childImageSharp.fluid}></Img>
                             </div>
                         </Col>
                     </Row>
@@ -227,47 +229,53 @@ const AboutPage = () => {
                             <Slider {...sliderSettings}>
                                 <div>
                                     <a href="https://www.instagram.com/tv/CLM3ZBuDfdL/?igshid=tn8bjnld7mpe" target="_blank">
-                                        <div className={`${aboutStyles.mediaCard} ${aboutStyles.dvtv} ${aboutStyles.square} card`}>
+
+                                        <BackgroundImage className={`${aboutStyles.mediaCard} ${aboutStyles.square} card`} fluid={data.dvtvImage.childImageSharp.fluid}>
                                             <div className={aboutStyles.tag}>
                                                 Instagram: the.bearded.medic
                                                 </div>
-                                        </div>
+                                        </BackgroundImage>
+
                                     </a>
                                 </div>
                                 <div>
                                     <a href="https://www.youtube.com/watch?v=AOyBbqGZW5A" target="_blank">
-                                        <div className={`${aboutStyles.mediaCard} ${aboutStyles.jessKatagInterview} ${aboutStyles.landscape} card`}>
+                                        {/* <div className={`${aboutStyles.mediaCard} ${aboutStyles.jessKatagInterview} ${aboutStyles.landscape} card`}> */}
+                                        <BackgroundImage className={`${aboutStyles.mediaCard} ${aboutStyles.landscape} card`} fluid={data.jessKatagInterview.childImageSharp.fluid}>
                                             <div className={aboutStyles.tag}>
                                                 YouTube: JessicaKatanga
                                                 </div>
-                                        </div>
+                                        </BackgroundImage>
                                     </a>
                                 </div>
                                 <div>
                                     <a href="https://www.linkedin.com/posts/sgul-medtech-society_healthtech-innovative-medtech-activity-6593442430509428736-CXb7" target="_blank">
-                                        <div className={`${aboutStyles.mediaCard} ${aboutStyles.sgulTalk} ${aboutStyles.landscape} card`}>
+
+                                        <BackgroundImage className={`${aboutStyles.mediaCard} ${aboutStyles.landscape} card`} fluid={data.sgulTalk.childImageSharp.fluid}>
                                             <div className={aboutStyles.tag}>
                                                 St Georges MedTech Lecture
-                                                </div>
-                                        </div>
+                                            </div>
+                                        </BackgroundImage>
+
                                     </a>
                                 </div>
                                 <div>
                                     <a href="https://www.linkedin.com/posts/dr-matthew-stubbs_nightingalehospital-stayhomesaveslives-activity-6662266554404732928-PgGY" target="_blank">
-                                        <div className={`${aboutStyles.mediaCard} ${aboutStyles.nightingale} ${aboutStyles.square} card`}>
+                                        <BackgroundImage className={`${aboutStyles.mediaCard} ${aboutStyles.square} card`} fluid={data.nightingale.childImageSharp.fluid}>
                                             <div className={aboutStyles.tag}>
                                                 NHS Nightingale
                                                 </div>
-                                        </div>
+                                        </BackgroundImage>
                                     </a>
                                 </div>
                                 <div>
                                     <a href="https://www.linkedin.com/posts/dr-matthew-stubbs_nightingalehospital-stayhomesaveslives-activity-6662266554404732928-PgGY" target="_blank">
-                                        <div className={`${aboutStyles.mediaCard} ${aboutStyles.bleepr1} ${aboutStyles.square} card`}>
+                                    
+                                        <BackgroundImage className={`${aboutStyles.mediaCard} ${aboutStyles.square} card`} fluid={data.bleepr1.childImageSharp.fluid}>
                                             <div className={aboutStyles.tag}>
                                                 Bleepr.io
                                                 </div>
-                                        </div>
+                                        </BackgroundImage>
                                     </a>
                                 </div>
 
@@ -282,9 +290,77 @@ const AboutPage = () => {
         </Layout >
 
     )
-
-
-
 }
+
+
+export const query = graphql`
+  query {
+    aboutHeroImage: file(relativePath: {eq: "about-hero-img.png"})
+      {
+        childImageSharp {
+          fluid(maxWidth: 540, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    nhsImage: file(relativePath: {eq: "nhs-nightingale.jpeg"})
+    {
+      childImageSharp {
+          fluid(maxWidth: 540, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+    }
+    devImage: file(relativePath: {eq: "dev-image.png"})
+    {
+      childImageSharp {
+          fluid(maxWidth: 700, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+    }
+    dvtvImage: file(relativePath: {eq: "dvtv-img.jpg"})
+    {
+      childImageSharp {
+          fluid(maxWidth: 336, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+    }
+    jessKatagInterview: file(relativePath: {eq: "jess-katag-interview.jpg"})
+    {
+      childImageSharp {
+          fluid(maxWidth: 624, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+    }
+    sgulTalk: file(relativePath: {eq: "sgul-medtech-conf.jpeg"})
+    {
+      childImageSharp {
+          fluid(maxWidth: 624, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+    }
+    nightingale: file(relativePath: {eq: "nhs-nightingale.jpeg"})
+    {
+      childImageSharp {
+          fluid(maxWidth: 336, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+    }
+    bleepr1: file(relativePath: {eq: "bleepr-social-img-1.jpeg"})
+    {
+      childImageSharp {
+          fluid(maxWidth: 336, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+    }
+  }
+`
+
 
 export default AboutPage

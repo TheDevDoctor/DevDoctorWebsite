@@ -1,7 +1,7 @@
 // Frameworks
 import React from 'react'
 import { Container, Col } from 'react-bootstrap'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image';
 
 // Components
