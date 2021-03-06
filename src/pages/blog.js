@@ -5,12 +5,12 @@ import { Row, Container, Col } from 'react-bootstrap'
 import BlogFeaturedCard from '../components/featured-blog-card'
 import BlogCard from '../components/blog-card'
 
-// Styles 
-import blogStyles from '../styles/blog.module.scss'
-
 import Footer from '../components/footer'
 import Layout from '../components/layout'
 import { graphql, useStaticQuery } from 'gatsby'
+
+// Styles 
+import blogStyles from '../styles/blog.module.scss'
 
 const BlogPage = () => {
     const blogPosts = useStaticQuery(graphql`

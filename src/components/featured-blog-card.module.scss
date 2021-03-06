@@ -1,11 +1,10 @@
 
 .featuredCard {
     height: 30rem;
-    background-image: url('../assets/images/deep-vr-blog.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    padding: 0;
+    padding: 0 !important;
     overflow: hidden;
     transition: transform 0.5s;
 

@@ -7,13 +7,12 @@ import YoutubePreview from '../components/youtube-preview-card'
 import Footer from '../components/footer'
 import Layout from '../components/layout'
 
-
-import styles from '../styles/youtube.module.scss'
 import { IoLogoYoutube } from 'react-icons/io5'
 
 import DevDocTV from '../assets/images/devdoc-tv.png'
 
 
+import styles from '../styles/youtube.module.scss'
 
 import PixelDrGame from '../assets/images/pixeldr-game.png'
 
@@ -81,7 +80,7 @@ const YouTubePage = () => {
                     <Row>
                         <Col xs={12} data-sal="zoom-in" data-sal-duration="1000">
                             <h1 className={`section-title ${styles.sectionTitle}`}>Latest Videos</h1>
-                            <div className={`title-accent ${styles.titleAccent}`}></div>
+                            <div className={`${styles.titleAccent} title-accent`}></div>
                         </Col>
                     </Row>
 
