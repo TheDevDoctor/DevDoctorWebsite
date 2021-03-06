@@ -9,6 +9,9 @@ exports.createPages = async ({ graphql, actions }) => {
                     node {
                         strapiId
                         slug
+                        coverImage {
+                            imageWidth
+                        }
                     }
                 }
             }
@@ -41,6 +44,7 @@ exports.createPages = async ({ graphql, actions }) => {
             component: ArticleTemplate,
             context: {
                 slug: post.node.slug,
+                imageWidth: post.node.coverImage.imageWidth === "ScreenWidth" ? 2200 : 800
             },
         });
     });

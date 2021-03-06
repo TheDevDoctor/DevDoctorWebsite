@@ -1,15 +1,16 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import Layout from '../components/layout'
-import ReactMarkdown from 'react-markdown'
+import Layout from '../components/layout';
+import ReactMarkdown from 'react-markdown';
+import Img from 'gatsby-image';
 
-import styles from './article.module.scss'
+import styles from './article.module.scss';
 
 import { IoLogoInstagram, IoLogoTwitter, IoLogoYoutube, IoLogoGithub } from "react-icons/io5";
 import { createElement } from "react";
 
 export const query = graphql`
-    query($slug: String!) {
+    query($slug: String!, $imageWidth: Int!) {
   	strapiBlogPost(slug: {eq: $slug}) {
     	slug
     	strapiId
@@ -20,7 +21,11 @@ export const query = graphql`
       coverImage {
         imageWidth
         image {
-          publicURL
+          childImageSharp {
+            fluid( maxWidth: $imageWidth, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
         }
       }
       title
@@ -75,7 +80,7 @@ const Article = ({ data }) => {
       <div className={styles.articleContainer}>
         <div className={styles.article}>
           <div className={styles.header}>
-            <img src={article.coverImage.image.publicURL} className={article.coverImage.imageWidth === 'ArticleWidth' ? styles.articleWidth : article.coverImage.imageWidth === 'WideWidth' ? styles.wideWidth : styles.screenWidth} ></img>
+            <Img fluid={article.coverImage.image.childImageSharp.fluid} className={article.coverImage.imageWidth === 'ArticleWidth' ? styles.coverArticleWidth : article.coverImage.imageWidth === 'WideWidth' ? styles.coverWideWidth : styles.coverScreenWidth} />
             <h1 className={styles.articleWidth}>{article.title}</h1>
             <h4 className={styles.articleWidth}>{article.description}</h4>
             <div className={`${styles.authorContainer} ${styles.articleWidth}`}>
