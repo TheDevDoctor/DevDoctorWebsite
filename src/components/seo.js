@@ -10,7 +10,7 @@ const SEO = ({ seo = {} }) => {
     // Merge default and page-specific SEO values
     const fullSeo = { ...defaultSeo, ...seo };
 
-
+    console.log(fullSeo)
     const getMetaTags = () => {
         const tags = [];
 
@@ -45,7 +45,7 @@ const SEO = ({ seo = {} }) => {
         if (fullSeo.shareImage) {
             const imageUrl =
                 (process.env.GATSBY_ROOT_URL || "http://localhost:8000") +
-                fullSeo.shareImage;
+                fullSeo.shareImage.publicURL;
             tags.push(
                 {
                     name: "image",
