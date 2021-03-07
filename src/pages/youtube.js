@@ -30,8 +30,8 @@ const YouTubePage = ({ data }) => {
             <Container>
                 <section className={styles.youtubeSection}>
 
-                    <Row>
-                        <Col xs={12} md={6} className="align-center">
+                    <Row className={styles.heroRowPadding}>
+                        <Col xs={12} lg={6} className="align-center">
                             <div className={`${styles.textContainer}`} data-sal="slide-right" data-sal-duration="1000">
                                 <h1>The Dev Doctor<span className={styles.youtubeLogo}><IoLogoYoutube></IoLogoYoutube></span></h1>
                                 <div className={`${styles.aboutAccent} title-accent`}></div>
@@ -45,8 +45,10 @@ const YouTubePage = ({ data }) => {
                         </p>
                             </div>
                         </Col>
-                        <Col xs={{ span: 12, order: 'first' }} md={{ span: 6, order: 'last' }} className="align-center">
-                            <Img fluid={data.heroImage.childImageSharp.fluid} className={styles.devdoctv} data-sal="slide-left" data-sal-duration="1000"></Img>
+                        <Col xs={{ span: 12, order: 'first' }} lg={{ span: 6, order: 'last' }} className="align-center">
+                            <div className={styles.heroImgContainer}>
+                                <Img fluid={data.heroImage.childImageSharp.fluid} className={styles.devdoctv} data-sal="slide-left" data-sal-duration="1000"></Img>
+                            </div>
                         </Col>
                     </Row>
 

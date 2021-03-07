@@ -16,6 +16,13 @@
     }
 }
 
+.heroImgContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
 
 .aboutAccent {
     margin: 1.5rem 0;
@@ -43,7 +50,6 @@
 .devdoctv {
     max-width: 100%;
     min-width: 100%;
-
 }
 
 
@@ -61,6 +67,13 @@
     }
 }
 
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .devdoctv {
+        min-width: 80%;
+        margin-bottom: 3rem;
+    }
+}
+
 @media only screen and (min-width: 576px) and (max-width: 767px) {
     .textContainer {
         margin: 0;
@@ -72,6 +85,11 @@
 
     .titleAccent {
         margin: 1rem auto;
+    }
+
+    .devdoctv {
+        min-width: 90%;
+        margin-bottom: 2rem;
     }
 }
 
@@ -100,5 +118,9 @@
 
     .previewContainer {
         padding: 2rem 1rem;
+    }
+
+    .heroRowPadding {
+        padding: 0 1rem;
     }
 }
