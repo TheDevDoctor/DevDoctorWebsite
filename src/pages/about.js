@@ -88,21 +88,19 @@ const AboutPage = ({ data }) => {
                 <Container fluid="md">
                     <Row className="align-center">
                         <Col xs={{ span: 12, order: 'last' }} md={{ span: 6, order: 'first' }}>
-                            <div className={aboutStyles.textContainer}>
+                            <div className={aboutStyles.textContainer} data-sal="slide-right" data-sal-duration="1000">
                                 <h1>about me<span className="fullstop-highlight">.</span></h1>
                                 <div className={`${aboutStyles.aboutAccent} title-accent`}></div>
-                                <h4>
-                                    I’m a medical doctor and developer based in London, UK
-                        </h4>
+                                <h4>I’m a medical doctor and developer based in London, UK</h4>
                                 <p>
                                     I like to use my medical training and understanding of the healthcare industry to create transformative and intuitive healthcare platforms.
-                        <br /><br />
-                        When I’m not in the Emergency Department, I’m behind my trusty laptop dreaming up my next platform.
-                        </p>
+                                <br /><br />
+                                When I’m not in the Emergency Department, I’m behind my trusty laptop dreaming up my next platform.
+                                </p>
                             </div>
                         </Col>
                         <Col xs={12} md={6}>
-                            <div className={aboutStyles.heroImageContainer}>
+                            <div className={aboutStyles.heroImageContainer} data-sal="slide-left" data-sal-duration="1000" data-sal-delay="500">
                                 <Img className={aboutStyles.aboutHeroImage} fluid={data.aboutHeroImage.childImageSharp.fluid}></Img>
                             </div>
                         </Col>
@@ -115,7 +113,7 @@ const AboutPage = ({ data }) => {
                 <Container fluid="md">
                     <Row className="align-center">
                         <Col xs={{ span: 12, order: 'last' }} md={{ span: 6, order: 'last' }}>
-                            <div className={`${aboutStyles.textContainer} ${aboutStyles.reverse}`}>
+                            <div className={`${aboutStyles.textContainer} ${aboutStyles.reverse}`} data-sal="slide-left" data-sal-duration="1000" >
                                 <h1>doctor<span className="fullstop-highlight">.</span></h1>
                                 <div className={`${aboutStyles.aboutAccent} title-accent`}></div>
                                 <h4>
@@ -131,7 +129,7 @@ const AboutPage = ({ data }) => {
                             </div>
                         </Col>
                         <Col xs={{ span: 12, order: 'first' }} md={{ span: 6, order: 'first' }}>
-                            <div className={aboutStyles.doctorImageContainer}>
+                            <div className={aboutStyles.doctorImageContainer} data-sal="slide-right" data-sal-duration="1000" data-sal-delay="500">
                                 <BackgroundImage className={`${aboutStyles.doctorImageCard} card`} fluid={data.nhsImage.childImageSharp.fluid}></BackgroundImage>
                             </div>
                         </Col>
@@ -144,7 +142,7 @@ const AboutPage = ({ data }) => {
                 <Container fluid="md">
                     <Row className="align-center">
                         <Col xs={{ span: 12, order: 'last' }} md={{ span: 6, order: 'first' }}>
-                            <div className={aboutStyles.textContainer}>
+                            <div className={aboutStyles.textContainer} data-sal="slide-right" data-sal-duration="1000">
                                 <h1>developer<span className="fullstop-highlight">.</span></h1>
                                 <div className={`${aboutStyles.aboutAccent} title-accent`}></div>
                                 <h4>
@@ -158,7 +156,7 @@ const AboutPage = ({ data }) => {
                             </div>
                         </Col>
                         <Col xs={{ span: 12, order: 'first' }} md={{ span: 6, order: 'last' }}>
-                            <div className={aboutStyles.devImageContainer}>
+                            <div className={aboutStyles.devImageContainer} data-sal="slide-left" data-sal-duration="1000" data-sal-delay="500">
                                 <Img className={aboutStyles.devImage} fluid={data.devImage.childImageSharp.fluid}></Img>
                             </div>
                         </Col>
@@ -171,14 +169,17 @@ const AboutPage = ({ data }) => {
                 <Container fluid="md">
                     <Row className="align-center">
                         <Col xs={{ span: 12, order: 'last' }} sm={{ span: 10, order: 'first' }} md={{ span: 6, order: 'last' }}>
-                            <div className={`${aboutStyles.textContainer} ${aboutStyles.otherTextContainer}`}>
+                            <div className={`${aboutStyles.textContainer} ${aboutStyles.otherTextContainer}`} data-sal="slide-left" data-sal-duration="1000">
                                 <h1>{otherSection[state.selected].title}<span className="fullstop-highlight">.</span></h1>
                                 <div className={`${aboutStyles.aboutAccent} title-accent`}></div>
                                 <h4>
                                     {otherSection[state.selected].subtitle}
                                 </h4>
                                 <div>
-                                    {state.selected === 0 && <p>In my developing work I try to combine modern technology with aesthetic design.<br /><br />I enjoy using my first hand experience of issues in healthcare to design platforms and algorithms that solve these in an efficient and effective way, all wrapped in a beautiful and intuitive UX/UI.</p>}
+                                    {state.selected === 0 && <p>I have a YouTube channel called The Dev Doctor, where I talk about the latest developments in technology, healthcare, and everything in between.
+                                        <br/>
+                                        <br/>
+                                        If you want to see more head over to the channel and subcribe to <a href="https://www.youtube.com/channel/UCWm6kHjTBaX4clFVXJCoD4A" target="_blank" className={aboutStyles.youtubeLink}>The Dev Doctor</a> channel</p>}
                                     {state.selected === 1 && <div><p>Most of my academic research has been focussed around Neuroscience, as I did an undergraduate degree in Neuroscience before studying medicine. Here are some highlights if interested:</p><ul><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4939400/" target="_blank"><li>Nociceptive-Evoked Potentials Are Sensitive to Behaviorally Relevant Stimulus Displacements in Egocentric Coordinates</li></a><li>Patient Safety on the menu: identifying parental concerns to enhance safe care on a paediatric ward</li></ul></div>}
                                     {state.selected === 2 && <p>
                                         <b>2012 - 2018:</b> Bachelor of Medicine & Bachelor of Surgery, UCL<br /><br />
@@ -192,7 +193,7 @@ const AboutPage = ({ data }) => {
 
                             </div>
                         </Col>
-                        <Col xs={{ span: 12, order: 'first' }} sm={{ span: 'auto', order: 'last' }} md={{ span: 6, order: 'first' }}>
+                        <Col xs={{ span: 12, order: 'first' }} sm={{ span: 'auto', order: 'last' }} md={{ span: 6, order: 'first' }} data-sal="slide-right" data-sal-duration="1000">
                             <div className={aboutStyles.cardContainer}>
                                 <div className={`${aboutStyles.otherCard} ${state.selected === 0 ? aboutStyles.selected : ''} card`} onClick={() => handleClick(0)}>
                                     <IoLogoYoutube className={`${aboutStyles.cardIcon} ${aboutStyles.youtube}`}></IoLogoYoutube>
@@ -219,13 +220,13 @@ const AboutPage = ({ data }) => {
                 <Container>
                     <Row className="align-center">
                         <Col>
-                            <h1 className={aboutStyles.mediaTitle}>media <span className="fullstop-highlight">.</span></h1>
+                            <h1 className={aboutStyles.mediaTitle} data-sal="fade-in" data-sal-duration="500">media <span className="fullstop-highlight">.</span></h1>
                         </Col>
                     </Row>
                 </Container>
                 <Row className="align-center">
                     <Col>
-                        <SliderWrap>
+                        <SliderWrap data-sal="fade-in" data-sal-duration="500" data-sal-delay="250">
                             <Slider {...sliderSettings}>
                                 <div>
                                     <a href="https://www.instagram.com/tv/CLM3ZBuDfdL/?igshid=tn8bjnld7mpe" target="_blank">

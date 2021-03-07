@@ -38,11 +38,10 @@ const YouTubePage = ({ data }) => {
                                 <h4>
                                     I also have a YouTube channel
                         </h4>
-                                <p>
-                                    I like to use my medical training and understanding of the healthcare industry to create transformative and intuitive healthcare platforms.
-                        <br /><br />
-                        When I’m not in the Emergency Department, I’m behind my trusty laptop dreaming up my next platform.
-                        </p>
+                                <p>I have a YouTube channel called The Dev Doctor, where I talk about the latest developments in technology, healthcare, and everything in between.
+                                        <br />
+                                    <br />
+                                        If you want to see more head over to the channel and subcribe to <a href="https://www.youtube.com/channel/UCWm6kHjTBaX4clFVXJCoD4A" target="_blank" className={styles.youtubeLink}>The Dev Doctor</a> channel</p>
                             </div>
                         </Col>
                         <Col xs={{ span: 12, order: 'first' }} lg={{ span: 6, order: 'last' }} className="align-center">
@@ -74,7 +73,7 @@ const YouTubePage = ({ data }) => {
                                 <Col md={6} className="align-center" data-sal="slide-left" data-sal-duration="1000">
                                     <div className={`${styles.previewContainer}`}>
                                         <h6 className={styles.tag}>{video.category.name}</h6>
-                                        <h3>{video.title}</h3>
+                                        <a href={edge.node.videoLink} target="_blank"><h3>{video.title}</h3></a>
                                         <p>
                                             {video.description}
                                         </p>

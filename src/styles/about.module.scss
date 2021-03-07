@@ -16,6 +16,15 @@
     }
 }
 
+.youtubeLink {
+    color: #e80cdd;
+    text-decoration: none;
+
+    &:hover {
+        font-weight: bold;
+    }
+}
+
 .sectionPadding {
     padding: 5rem 0;
     overflow: hidden;

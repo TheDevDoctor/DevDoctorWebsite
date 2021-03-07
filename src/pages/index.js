@@ -87,7 +87,7 @@ const HomePage = ({data}) => {
           {/* Featured 2 */}
           <div className="row featured-container">
             <Col lg={4}>
-              <div className="featured-card-container" data-sal="slide-right" data-sal-delay="500" data-sal-duration="1000">
+              <div className="featured-card-container" data-sal="slide-right" data-sal-duration="1000">
                 <div className="card featured-card reverse">
                   <div className="project-tag reverse">
                     <img src={Tag}></img>
@@ -114,7 +114,7 @@ const HomePage = ({data}) => {
                 </div>
               </div>
             </Col>
-            <Col xs={{ span: 12, order: 'first' }} lg={{ span: 8, order: 'last' }} data-sal="slide-left" data-sal-duration="1000">
+            <Col xs={{ span: 12, order: 'first' }} lg={{ span: 8, order: 'last' }} data-sal="slide-left" data-sal-duration="1000" data-sal-delay="500">
               <div className={`featured-image-container reverse`}>
                 <YoutubePreview fluidImage={data.crisprFeatured.childImageSharp.fluid} link="https://youtu.be/iurulR5wxis"></YoutubePreview>
               </div>
