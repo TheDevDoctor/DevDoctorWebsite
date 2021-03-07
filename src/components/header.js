@@ -8,7 +8,7 @@ import DevDocLogo from '../assets/images/dev-doc-logo.png'
 
 import headerStyles from './header.module.scss'
 
-import { IoLogoInstagram, IoLogoTwitter, IoLogoYoutube, IoLogoGithub } from "react-icons/io5";
+import { IoLogoInstagram, IoLogoTwitter, IoLogoYoutube, IoLogoGithub, IoMenu } from "react-icons/io5";
 
 
 
@@ -27,7 +27,9 @@ const Header = () => (
                         />
                     </Link>
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="navbarResponsive" />
+                <Navbar.Toggle aria-controls="navbarResponsive" className={headerStyles.navbarToggle}>
+                    <IoMenu className={headerStyles.menuIcon}></IoMenu>
+                </Navbar.Toggle>
                 <Navbar.Collapse className={headerStyles.navbarResponsive} id="navbarResponsive">
                     <Nav as="ul" className="ml-auto">
                         <Nav.Item as="li">

@@ -39,6 +39,16 @@ header {
     line-height: 2.5rem;
 }
 
+.navbarToggle {
+    border: none !important;
+    padding: 2px 4px;
+
+    .menuIcon {
+        font-size: 2rem;
+        color: #ffffffc7;
+    }
+}
+
 @media only screen and (min-width: 576px) and (max-width: 767px) {
     .navbarResponsive {
         padding-top: 1rem;
