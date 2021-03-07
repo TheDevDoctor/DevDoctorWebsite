@@ -44,7 +44,7 @@ const SEO = ({ seo = {} }) => {
         }
         if (fullSeo.shareImage) {
             const imageUrl =
-                process.env.GATSBY_API_URL + fullSeo.shareImage.publicURL;
+                'https://thedevdoctor.com' + fullSeo.shareImage.publicURL;
             tags.push(
                 {
                     name: "image",
