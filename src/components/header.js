@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav'
 import Container from 'react-bootstrap/Container'
 import { Link } from 'gatsby'
 
-import DevDocLogoSmall from '../assets/images/DevDocLogoSmall.png'
+import DevDocLogo from '../assets/images/dev-doc-logo.png'
 
 import headerStyles from './header.module.scss'
 
@@ -20,9 +20,8 @@ const Header = () => (
                 <Navbar.Brand>
                     <Link to="/">
                         <img
-                            src={DevDocLogoSmall}
-                            width="60"
-                            height="60"
+                            src={DevDocLogo}
+                            height="30px"
                             className="d-inline-block align-top"
                             alt="The Dev Doctor Logo"
                         />
