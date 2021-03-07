@@ -16,6 +16,7 @@ export const query = graphql`
             publishedAt
             backgroundColor
             content
+            theMission
             previewImage {
                 childImageSharp {
                     fluid(maxWidth: 777, quality: 100) {
@@ -138,12 +139,12 @@ const Project = ({ data }) => {
                                     <h1>the mission<span className="fullstop-highlight">.</span></h1>
                                     <div className={`title-accent ${styles.accent}`}></div>
                                     <p>
-                                        Our vision is simple, to connect every healthcare professional on the planet
+                                        {project.theMission}
                                     </p>
                                 </Col>
                                 <Col md={4} className="d-none d-md-flex">
                                     <div className={styles.logoContainer}>
-                                        <div className={styles.appBackground}>
+                                        <div className={styles.appBackground} style={{backgroundColor: project.backgroundColor}}>
                                             <Img fluid={project.appLogo.childImageSharp.fluid} className={styles.logo} />
                                         </div>
                                     </div>

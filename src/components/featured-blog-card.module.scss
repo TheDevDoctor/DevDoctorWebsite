@@ -53,11 +53,13 @@
 @media only screen and (max-width: 576px) {
     .featuredCard {
         height: 16rem;
+        min-height: 16rem;
     }
 
     .cover {
+        padding: 1rem;
         h3 {
-            font-size: 1.25rem;
+            font-size: 1.4rem;
         }
     }
 }
