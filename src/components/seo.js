@@ -44,8 +44,7 @@ const SEO = ({ seo = {} }) => {
         }
         if (fullSeo.shareImage) {
             const imageUrl =
-                (process.env.GATSBY_ROOT_URL || "http://localhost:8000") +
-                fullSeo.shareImage.publicURL;
+                process.env.GATSBY_API_URL + fullSeo.shareImage.publicURL;
             tags.push(
                 {
                     name: "image",
