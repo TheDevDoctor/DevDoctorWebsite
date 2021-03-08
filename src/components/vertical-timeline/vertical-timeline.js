@@ -14,7 +14,7 @@ const VerticalTimeline = () => {
 
     const projects = useStaticQuery(graphql`
         query {
-            allStrapiProject {
+            allStrapiProject(sort: {fields: publishedAt, order: DESC}) {
                 edges {
                     node {
                             strapiId
