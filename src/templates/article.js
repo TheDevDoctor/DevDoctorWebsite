@@ -71,7 +71,7 @@ const Article = ({ data }) => {
     metaTitle: article.title,
     metaDescription: article.description,
     article: true,
-    shareImage: article.coverImage.image.publicURL
+    shareImage: article.coverImage.image
   }
 
 
