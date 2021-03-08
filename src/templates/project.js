@@ -118,6 +118,34 @@ const Project = ({ data }) => {
         return <div className={`title-accent ${styles.articleBreak}`}></div>
     }
 
+    function headingRenderer(props) {
+
+        const heading = "h".concat(props.level)
+
+        return React.createElement("h".concat(props.level), { className: styles.articleWidth }, props.children);
+    }
+
+    function listRenderer(props) {
+        var attrs = getCoreProps(props);
+
+        if (props.start !== null && props.start !== 1 && props.start !== undefined) {
+            attrs.start = props.start.toString();
+        }
+
+        attrs.className = `${styles.articleWidth}`
+
+        return React.createElement(props.ordered ? 'ol' : 'ul', attrs, props.children);
+    }
+
+    function getCoreProps(props) {
+        var source = props['data-sourcepos'];
+        /* istanbul ignore next - nodes from plugins w/o position */
+      
+        return source ? {
+          'data-sourcepos': source
+        } : {};
+      }
+
 
     return (
         <Layout seo={projectSEO}>
@@ -242,7 +270,7 @@ const Project = ({ data }) => {
                 <div className={styles.story}>
                     <div className={`${styles.articleContent} article-content`}>
 
-                        <ReactMarkdown renderers={{ paragraph: renderParagraph, thematicBreak: thematicBreakRenderer }} allowDangerousHtml={true} transformImageUri={uri => uri.startsWith('http') ? uri : `${process.env.IMAGE_BASE_URL}${uri}`}>{project.content}</ReactMarkdown>
+                        <ReactMarkdown renderers={{ paragraph: renderParagraph, thematicBreak: thematicBreakRenderer, heading: headingRenderer, list: listRenderer }} allowDangerousHtml={true} transformImageUri={uri => uri.startsWith('http') ? uri : `${process.env.IMAGE_BASE_URL}${uri}`}>{project.content}</ReactMarkdown>
                     </div>
                 </div>
             </section>
