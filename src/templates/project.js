@@ -60,6 +60,9 @@ export const query = graphql`
                     }
                 }
             }
+            shareImage {
+                publicURL
+            }
             description
         }
     }`
@@ -86,7 +89,12 @@ const Project = ({ data }) => {
     const team = project.teamMember;
     const platforms = project.platform;
 
-    console.log(project.content)
+    const projectSEO = {
+        metaTitle: project.title,
+        metaDescription: project.description,
+        article: true,
+        shareImage: project.shareImage
+    }
 
     function renderParagraph(props) {
         const { children } = props;
@@ -112,7 +120,7 @@ const Project = ({ data }) => {
 
 
     return (
-        <Layout>
+        <Layout seo={projectSEO}>
             <section>
                 <div className={styles.headerBanner}>
                     <Container>
@@ -144,7 +152,7 @@ const Project = ({ data }) => {
                                 </Col>
                                 <Col md={4} className="d-none d-md-flex">
                                     <div className={styles.logoContainer}>
-                                        <div className={styles.appBackground} style={{backgroundColor: project.backgroundColor}}>
+                                        <div className={styles.appBackground} style={{ backgroundColor: project.backgroundColor }}>
                                             <Img fluid={project.appLogo.childImageSharp.fluid} className={styles.logo} />
                                         </div>
                                     </div>
