@@ -1,0 +1,110 @@
+.textContainer {
+    h1 {
+        font-weight: bold;
+        font-size: 5rem;
+    }
+
+    h4 {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.socialButton {
+    margin: 0 4px;
+    box-shadow: 0 4px 0 0 #1f2325;
+    width: unset;
+    padding: 0.5rem 1.5rem !important;
+    font-size: 1.5rem !important;
+    margin-top: 1rem;
+}
+
+.socialIcon {
+    color: white;
+    font-size: 1.5rem;
+    position: relative;
+    top: -3px;
+
+    margin-right: 0.5rem;
+
+
+    &:hover {
+        color: rgb(212, 252, 255);
+    }
+}
+
+.fourofourRow {
+    min-height: 100vh;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .textContainer {
+        text-align: center;
+    }
+
+    .ripImage {
+        width: 80%;
+    }
+
+    .imageCont {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    .fourofourRow {
+        min-height: unset;
+    }
+
+    .fourofourContainer {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .textContainer {
+        text-align: center;
+    }
+
+    .fourofourRow {
+        min-height: unset;
+    }
+
+    .fourofourContainer {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .textContainer {
+        text-align: center;
+    }
+
+    .fourofourRow {
+        min-height: unset;
+    }
+
+    .fourofourContainer {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+
+    .textContainer {
+        h1 {
+            font-size: 3rem;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+        }
+    }
+}
