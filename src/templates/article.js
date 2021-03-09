@@ -65,7 +65,28 @@ const Article = ({ data }) => {
 
     const heading = "h".concat(props.level)
 
-    return React.createElement("h".concat(props.level), {className: styles.articleWidth}, props.children);
+    return React.createElement("h".concat(props.level), { className: styles.articleWidth }, props.children);
+  }
+
+  function listRenderer(props) {
+    var attrs = getCoreProps(props);
+
+    if (props.start !== null && props.start !== 1 && props.start !== undefined) {
+      attrs.start = props.start.toString();
+    }
+
+    attrs.className = `${styles.articleWidth}`
+
+    return React.createElement(props.ordered ? 'ol' : 'ul', attrs, props.children);
+  }
+
+  function getCoreProps(props) {
+    var source = props['data-sourcepos'];
+    /* istanbul ignore next - nodes from plugins w/o position */
+
+    return source ? {
+      'data-sourcepos': source
+    } : {};
   }
 
   const articleSEO = {
@@ -108,10 +129,10 @@ const Article = ({ data }) => {
           </div>
           <div className={`title-accent ${styles.blogAccent}`}></div>
 
-          
+
           <div className={`${styles.articleContent} article-content`}>
 
-            <ReactMarkdown renderers={{ paragraph: renderParagraph, thematicBreak: thematicBreakRenderer, heading: headingRenderer }} allowDangerousHtml={true} transformImageUri={uri => uri.startsWith('http') ? uri : `${process.env.IMAGE_BASE_URL}${uri}`}>{article.content}</ReactMarkdown>
+            <ReactMarkdown renderers={{ paragraph: renderParagraph, thematicBreak: thematicBreakRenderer, heading: headingRenderer, list: listRenderer }} allowDangerousHtml={true} transformImageUri={uri => uri.startsWith('http') ? uri : `${process.env.IMAGE_BASE_URL}${uri}`}>{article.content}</ReactMarkdown>
           </div>
 
         </div>

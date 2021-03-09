@@ -167,6 +167,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 5rem;
 
     .articleContent {
         display: flex;
@@ -210,7 +211,7 @@
 
         img {
             max-width: 200px;
-            margin: 0 0 3rem;
+            margin: 1rem 0 3rem;
 
             &[src$="article-width"] {
                 width: 100%;
@@ -411,6 +412,10 @@
         }
     }
 
+    .headerBanner {
+        background-image: radial-gradient(49% 87%, rgba(222, 242, 247, 0.5) 36%, rgba(84, 228, 255, 0.38) 100%);;
+    }
+
     .bannerContent {
         h1 {
             font-size: 2.5rem;
@@ -505,6 +510,8 @@
     }
 
     .story {
+        padding-bottom: 3rem;
+
         .articleContent {
             p {
                 font-size: 1.2rem;
@@ -525,14 +532,19 @@
 
                 &[src$="article-width"] {
                     width: 90%;
+                    max-width: 90%;
                 }
 
                 &[src$="wide-width"] {
                     width: 100%;
+                    max-width: 100vw;
+                    min-width: 100vw;
                 }
 
                 &[src$="screen-width"] {
                     width: 100vw;
+                    max-width: 100vw;
+                    min-width: 100vw;
                 }
             }
         }

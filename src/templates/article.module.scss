@@ -61,9 +61,16 @@
                 margin-top: 4rem;
             }
 
-            ol li {
-                font-family: 'Newsreader';
-                font-size: 20px;
+            ol,
+            ul {
+                padding: 0 15px 0 3rem;
+                font-size: 1.4rem;
+                font-weight: 300;
+                font-family: 'newsreader';
+
+                li {
+                    margin-bottom: 0.5rem;
+                }
             }
 
             b,
@@ -74,6 +81,11 @@
             h3 {
                 margin-top: 2rem;
                 margin-bottom: 1.5rem;
+            }
+
+            h4 {
+                font-size: 1.4rem;
+                margin: 1.5rem 0;
             }
 
             img {
@@ -202,9 +214,9 @@
         width: 90%;
     }
 
-    .coverScreenWidth { 
+    .coverScreenWidth {
         margin-top: 0;
-    }   
+    }
 
 
     .articleContainer {
@@ -225,6 +237,17 @@
                     font-size: 1.2rem;
                     margin-bottom: 1.5rem;
                     line-height: unset;
+                }
+
+                ol,
+                ul {
+                    padding: 0 15px 0 2rem;
+                    font-size: 1.2rem;
+                }
+
+                h4 {
+                    font-size: 1.2rem;
+                    margin: 1.5rem 0;
                 }
 
                 img {
@@ -261,7 +284,7 @@
         max-width: 100%;
         width: 100%;
     }
-    
+
     .articleContainer {
         .article {
             .header {
