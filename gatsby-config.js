@@ -12,12 +12,14 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: 'The Dev Doctor',
-    author: 'Matthew Stubbs'
+    author: 'Matthew Stubbs',
+    siteUrl: 'https://www.thedevdoctor.com',
   },
   plugins: [
     'gatsby-plugin-sass',
     `gatsby-plugin-scroll-reveal`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
