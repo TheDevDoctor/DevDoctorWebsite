@@ -10,7 +10,6 @@ const SEO = ({ seo = {} }) => {
     // Merge default and page-specific SEO values
     const fullSeo = { ...defaultSeo, ...seo };
 
-    console.log(fullSeo)
     const getMetaTags = () => {
         const tags = [];
 
@@ -67,6 +66,7 @@ const SEO = ({ seo = {} }) => {
             });
         }
         tags.push({ name: "twitter:card", content: "summary_large_image" });
+        tags.push({ name: "google-site-verification", content: "_GEDDrfevQS_fbeu8GNF7ejmX94KvI9Dvv9_4jyNhyY" });
 
         return tags;
     }
