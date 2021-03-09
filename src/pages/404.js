@@ -37,7 +37,7 @@ export const query = graphql`
     ripImage: file(relativePath: {eq: "404-page-rip.png"})
       {
         childImageSharp {
-          fluid(maxWidth: 1200, quality: 100) {
+          fluid(maxWidth: 635, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
