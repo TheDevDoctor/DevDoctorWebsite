@@ -193,6 +193,14 @@ export const query = graphql`
           }
         }
     }
+    tag: file(relativePath: {eq: "tag.png"})
+    {
+      childImageSharp {
+          fluid(maxWidth: 112, quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          }
+        }
+    }
   }
 `
 
