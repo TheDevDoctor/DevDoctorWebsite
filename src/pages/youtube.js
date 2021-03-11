@@ -21,7 +21,7 @@ const YouTubePage = ({ data }) => {
     const youtubeVideos = data.allStrapiYoutubeVideo
 
     const youtubeSEO = {
-        metaTitle: 'Youtube Channel - The Dev Doctor',
+        metaTitle: 'Youtube Channel',
         metaDescription: 'Here you can find all my recent uploads to The Dev Doctor YouTube channel'
     }
 
