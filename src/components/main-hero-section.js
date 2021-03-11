@@ -43,13 +43,13 @@ const HeroComponent = () => {
                 <Row noGutters={true}>
                     <Col xs={6}>
                         <div className={heroStyles.devContainer}>
-                            <div data-sal="slide-right" data-sal-duration="1000">
+                            <div>
                                 <Img fluid={data.devFace.childImageSharp.fluid} className={heroStyles.devImage}></Img>
                             </div>
 
                             <Link to="/about">
                                 <div id="designer" className={heroStyles.designerText} style={designerTextStyle}>
-                                    <div id="designer-desc" className={`${heroStyles.description} ${heroStyles.left}`} data-sal="fade" data-sal-duration="1000" data-sal-delay="500" data-sal-easing="ease">
+                                    <div id="designer-desc" className={`${heroStyles.description} ${heroStyles.left}`}>
                                         <h1 className={`${heroStyles.jobTitle} ${heroStyles.dev}`} >{`<`}<span style={{ fontWeight: 'bolder' }}>dev</span>{`>`}</h1>
                                         <p className={heroStyles.jobDescription}>Developer focussing on creating efficient and beautiful health technology platforms</p>
                                     </div>
@@ -59,13 +59,13 @@ const HeroComponent = () => {
                     </Col>
                     <Col xs={6}>
                         <div className={heroStyles.docContainer}>
-                            <div data-sal="slide-left" data-sal-duration="1000" data-sal-delay="250">
+                            <div data-sal="slide-left">
                                 <Img fluid={data.docFace.childImageSharp.fluid} className={heroStyles.docImage}></Img>
                             </div>
 
                             <Link to="/portfolio">
                                 <div id="designer" className={heroStyles.devText}>
-                                    <div id="designer-desc" className={`${heroStyles.description} ${heroStyles.right}`} data-sal="fade" data-sal-duration="1000" data-sal-delay="500" data-sal-easing="ease">
+                                    <div id="designer-desc" className={`${heroStyles.description} ${heroStyles.right}`}>
                                         <h1 className={`${heroStyles.jobTitle}`}>doctor</h1>
                                         <p className={heroStyles.jobDescription}>Emergency department doctor working in London for the UK's National Health Service</p>
                                     </div>
