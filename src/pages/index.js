@@ -10,9 +10,6 @@ import HeroComponent from '../components/main-hero-section'
 import YoutubePreview from '../components/youtube-preview-card'
 
 // Images
-import BleeprFeaturedImg from '../assets/images/bleepr-featured-img.png'
-import PixelDrGame from '../assets/images/pixeldr-game.png'
-import CrisprImage from '../assets/images/investing-in-CRISPR.png'
 import Tag from '../assets/images/tag.png'
 import { IoChevronDown, IoLogoYoutube } from 'react-icons/io5'
 
