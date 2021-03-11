@@ -47,8 +47,10 @@ const HomePage = ({ data }) => {
               <div className="featured-card-container" data-sal="slide-left" data-sal-duration="1000">
                 <div className="featured-card card">
                   <div className="project-tag">
-                    <img src={Tag}></img>
-                    <h3>PROJECT</h3>
+                    
+                      <h3>PROJECT</h3>
+                    
+
                   </div>
 
                   <div className="featured-card-header">
@@ -87,7 +89,7 @@ const HomePage = ({ data }) => {
               <div className="featured-card-container" data-sal="slide-right" data-sal-duration="1000">
                 <div className="card featured-card reverse">
                   <div className="project-tag reverse">
-                    <img src={Tag}></img>
+
                     <h3>YOUTUBE</h3>
                   </div>
 
@@ -130,7 +132,7 @@ const HomePage = ({ data }) => {
               <div className="featured-card-container" data-sal="slide-left" data-sal-duration="1000">
                 <div className="featured-card card">
                   <div className="project-tag">
-                    <img src={Tag}></img>
+
                     <h3>PROJECT</h3>
                   </div>
 
