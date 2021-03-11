@@ -43,8 +43,9 @@ const HeroComponent = () => {
                 <Row noGutters={true}>
                     <Col xs={6}>
                         <div className={heroStyles.devContainer}>
-
-                           <Img fluid={data.devFace.childImageSharp.fluid} className={heroStyles.devImage} data-sal="slide-right" data-sal-duration="1000"></Img>
+                            <div data-sal="slide-right" data-sal-duration="1000">
+                                <Img fluid={data.devFace.childImageSharp.fluid} className={heroStyles.devImage}></Img>
+                            </div>
 
                             <Link to="/about">
                                 <div id="designer" className={heroStyles.designerText} style={designerTextStyle}>
@@ -58,7 +59,9 @@ const HeroComponent = () => {
                     </Col>
                     <Col xs={6}>
                         <div className={heroStyles.docContainer}>
-                            <Img fluid={data.docFace.childImageSharp.fluid} className={heroStyles.docImage} data-sal="slide-left" data-sal-duration="1000" data-sal-delay="250"></Img>
+                            <div data-sal="slide-left" data-sal-duration="1000" data-sal-delay="250">
+                                <Img fluid={data.docFace.childImageSharp.fluid} className={heroStyles.docImage}></Img>
+                            </div>
 
                             <Link to="/portfolio">
                                 <div id="designer" className={heroStyles.devText}>
