@@ -39,12 +39,12 @@ const HomePage = ({ data }) => {
           {/* Featured 1 */}
           <div className="row featured-container">
             <Col lg={8}>
-              <div className="featured-image-container" data-sal="slide-right" data-sal-delay="500" data-sal-duration="1000">
+              <div className="featured-image-container">
                 <Img className="featured-image" fluid={data.bleeprFeatured.childImageSharp.fluid}></Img>
               </div>
             </Col>
             <Col lg={4}>
-              <div className="featured-card-container" data-sal="slide-left" data-sal-duration="1000">
+              <div className="featured-card-container">
                 <div className="featured-card card">
                   <div className="project-tag">
                     
