@@ -59,7 +59,7 @@ const HeroComponent = () => {
                     </Col>
                     <Col xs={6}>
                         <div className={heroStyles.docContainer}>
-                            <div data-sal="slide-left">
+                            <div>
                                 <Img fluid={data.docFace.childImageSharp.fluid} className={heroStyles.docImage}></Img>
                             </div>
 
