@@ -2,8 +2,10 @@
 
     text-align: right;
 
-    img {
+    .devImage {
+        min-width: 68%;
         max-width: 68%;
+        float: right;
     }
 }
 
@@ -14,7 +16,8 @@
 .docContainer {
 
 
-    img {
+    .docImage {
+        min-width: 68%;
         max-width: 68%;
     }
 }

@@ -23,7 +23,7 @@ export const query = graphql`
         image {
           childImageSharp {
             fluid( maxWidth: $imageWidth, quality: 100) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
           publicURL

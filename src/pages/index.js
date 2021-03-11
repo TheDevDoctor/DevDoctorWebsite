@@ -19,7 +19,7 @@ import { IoChevronDown, IoLogoYoutube } from 'react-icons/io5'
 // Styles
 import indexStyles from '../styles/index.module.scss'
 
-const HomePage = ({data}) => {
+const HomePage = ({ data }) => {
   const spacerHeightTemporary = {
     height: '100px'
   }
@@ -126,7 +126,7 @@ const HomePage = ({data}) => {
           <div className="row featured-container">
             <Col lg={8}>
               <div className="featured-image-container pixel-dr" data-sal="slide-right" data-sal-delay="500" data-sal-duration="1000">
-              <Img className="featured-image" fluid={data.pixelDrFeatured.childImageSharp.fluid}></Img>
+                <Img className="featured-image" fluid={data.pixelDrFeatured.childImageSharp.fluid}></Img>
               </div>
             </Col>
             <Col lg={4}>
@@ -176,7 +176,7 @@ export const query = graphql`
       {
         childImageSharp {
           fluid(maxWidth: 590, quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
@@ -184,7 +184,7 @@ export const query = graphql`
     {
       childImageSharp {
           fluid(maxWidth: 590, quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
     }
@@ -192,7 +192,7 @@ export const query = graphql`
     {
       childImageSharp {
           fluid(maxWidth: 560, quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
     }

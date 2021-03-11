@@ -300,7 +300,7 @@ export const query = graphql`
       {
         childImageSharp {
           fluid(maxWidth: 540, quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
@@ -308,7 +308,7 @@ export const query = graphql`
     {
       childImageSharp {
           fluid(maxWidth: 540, quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
     }
@@ -316,7 +316,7 @@ export const query = graphql`
     {
       childImageSharp {
           fluid(maxWidth: 700, quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
     }
@@ -324,7 +324,7 @@ export const query = graphql`
     {
       childImageSharp {
           fluid(maxWidth: 336, quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
     }
@@ -332,7 +332,7 @@ export const query = graphql`
     {
       childImageSharp {
           fluid(maxWidth: 624, quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
     }
@@ -340,7 +340,7 @@ export const query = graphql`
     {
       childImageSharp {
           fluid(maxWidth: 624, quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
     }
@@ -348,7 +348,7 @@ export const query = graphql`
     {
       childImageSharp {
           fluid(maxWidth: 336, quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
     }
@@ -356,7 +356,7 @@ export const query = graphql`
     {
       childImageSharp {
           fluid(maxWidth: 336, quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
     }

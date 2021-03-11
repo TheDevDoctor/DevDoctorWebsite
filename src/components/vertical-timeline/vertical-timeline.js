@@ -27,7 +27,7 @@ const VerticalTimeline = () => {
                             previewImage {
                                 childImageSharp {
                                         fluid(maxWidth: 500, quality: 100) {
-                                            ...GatsbyImageSharpFluid
+                                            ...GatsbyImageSharpFluid_withWebp
                                         }
                                     }
                                 }
@@ -35,7 +35,7 @@ const VerticalTimeline = () => {
                             appLogo {
                                 childImageSharp {
                                         fluid(maxWidth: 50, quality: 100) {
-                                            ...GatsbyImageSharpFluid
+                                            ...GatsbyImageSharpFluid_withWebp
                                         }
                                     }
                                 }

@@ -38,7 +38,7 @@ const BlogPage = () => {
                             image {
                                 childImageSharp {
                                     fluid(maxWidth: 930, quality: 100) {
-                                        ...GatsbyImageSharpFluid
+                                        ...GatsbyImageSharpFluid_withWebp
                                     }
                                 }
                             }

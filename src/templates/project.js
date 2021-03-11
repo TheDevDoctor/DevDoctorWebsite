@@ -20,7 +20,7 @@ export const query = graphql`
             previewImage {
                 childImageSharp {
                     fluid(maxWidth: 777, quality: 100) {
-                        ...GatsbyImageSharpFluid
+                        ...GatsbyImageSharpFluid_withWebp
                     }
                 }
             }
@@ -28,7 +28,7 @@ export const query = graphql`
             appLogo {
                 childImageSharp {
                     fluid(maxWidth: 130, quality: 100) {
-                        ...GatsbyImageSharpFluid
+                        ...GatsbyImageSharpFluid_withWebp
                     }
                 }
             }
@@ -39,7 +39,7 @@ export const query = graphql`
                         logo {
                         childImageSharp {
                             fluid(maxWidth: 80) {
-                                ...GatsbyImageSharpFluid
+                                ...GatsbyImageSharpFluid_withWebp
                             }
                         }
                     }
@@ -54,7 +54,7 @@ export const query = graphql`
                     profilePic {
                         childImageSharp {
                             fluid(maxWidth: 90) {
-                                ...GatsbyImageSharpFluid
+                                ...GatsbyImageSharpFluid_withWebp
                             }
                         }
                     }
