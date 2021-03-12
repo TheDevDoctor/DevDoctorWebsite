@@ -21,7 +21,7 @@ const YouTubePage = ({ data }) => {
     const youtubeVideos = data.allStrapiYoutubeVideo
 
     const youtubeSEO = {
-        metaTitle: 'Youtube Channel',
+        metaTitle: 'My Youtube Channel',
         metaDescription: 'The Dev Doctor YouTube channel, covering everything health technology, investment, education, and future.'
     }
 
