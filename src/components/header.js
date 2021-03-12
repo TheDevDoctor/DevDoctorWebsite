@@ -23,6 +23,7 @@ const Header = () => (
                             src={DevDocLogo}
                             height="30px"
                             className="d-inline-block align-top"
+                            alt="logo"
                         />
                     </Link>
                 </Navbar.Brand>
