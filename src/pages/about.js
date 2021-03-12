@@ -35,7 +35,7 @@ const SliderWrap = styled.div`
 const AboutPage = ({ data }) => {
 
     const aboutSEO = {
-        metaTitle: 'About Me',
+        metaTitle: 'Some Things About Me',
         metaDescription: 'Everything about me. Doctor, developer, youtube, research, tech.'
     }
 
