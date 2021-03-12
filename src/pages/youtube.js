@@ -22,7 +22,7 @@ const YouTubePage = ({ data }) => {
 
     const youtubeSEO = {
         metaTitle: 'Youtube Channel',
-        metaDescription: 'Here you can find all my recent uploads to The Dev Doctor YouTube channel'
+        metaDescription: 'The Dev Doctor YouTube channel, covering everything health technology, investment, education, and future.'
     }
 
     return (
@@ -58,7 +58,7 @@ const YouTubePage = ({ data }) => {
                 <Container className={styles.listContainer}>
                     <Row>
                         <Col xs={12} data-sal="zoom-in" data-sal-duration="1000">
-                            <h1 className={`section-title ${styles.sectionTitle}`}>Latest Videos</h1>
+                            <h2 className={`section-title ${styles.sectionTitle}`}>Latest Videos</h2>
                             <div className={`${styles.titleAccent} title-accent`}></div>
                         </Col>
                     </Row>

@@ -53,8 +53,8 @@ const BlogPage = () => {
     const featured = blogPosts.allStrapiBlogPost.edges.filter(edge => edge.node.featured)[0]
 
     const blogSEO = {
-        metaTitle: 'Blog Page',
-        metaDescription: 'Here you can find all of my blog articles, focussing on technology, life, healthcare, and computer science'
+        metaTitle: 'Health & Technology Blog Page',
+        metaDescription: 'All of my blog articles, focussing on technology, life, healthcare, and computer science'
     }
 
     return (

@@ -44,7 +44,7 @@ const HeroComponent = () => {
                     <Col xs={6}>
                         <div className={heroStyles.devContainer}>
                             <div>
-                                <Img fluid={data.devFace.childImageSharp.fluid} className={heroStyles.devImage}></Img>
+                                <Img fluid={data.devFace.childImageSharp.fluid} className={heroStyles.devImage} alt="The Dev Doctor: Developer Image"></Img>
                             </div>
 
                             <Link to="/about">
@@ -60,7 +60,7 @@ const HeroComponent = () => {
                     <Col xs={6}>
                         <div className={heroStyles.docContainer}>
                             <div>
-                                <Img fluid={data.docFace.childImageSharp.fluid} className={heroStyles.docImage}></Img>
+                                <Img fluid={data.docFace.childImageSharp.fluid} className={heroStyles.docImage} alt="The Dev Doctor: Doctor Image"></Img>
                             </div>
 
                             <Link to="/portfolio">

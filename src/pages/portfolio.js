@@ -64,7 +64,7 @@ const PortfolioPage = ({data}) => {
 
     const portfolioSEO = {
         metaTitle: 'Portfolio Timeline',
-        metaDescription: 'Here you can find a timeline of all my projects, right back to when I first started learning how to code as a medical student'
+        metaDescription: 'A timeline of all my projects. A chronological list of all my healthcare technology platforms and projects.'
     }
 
     return (

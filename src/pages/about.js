@@ -36,7 +36,7 @@ const AboutPage = ({ data }) => {
 
     const aboutSEO = {
         metaTitle: 'Some Things About Me',
-        metaDescription: 'Everything about me. Doctor, developer, youtube, research, tech.'
+        metaDescription: 'Everything about me. Doctor, developer, youtube, research, and technology. Bridging the gap between medicine and computer science'
     }
 
     const otherSection = [
