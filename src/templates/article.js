@@ -49,6 +49,8 @@ const Article = ({ data }) => {
       && children[0].props
       && children[0].props.src) { // rendering media without p wrapper
 
+        console.log(children)
+
       return children;
     }
 
@@ -102,7 +104,7 @@ const Article = ({ data }) => {
       <div className={styles.articleContainer}>
         <div className={styles.article}>
           <div className={styles.header}>
-            <Img fluid={article.coverImage.image.childImageSharp.fluid} className={article.coverImage.imageWidth === 'ArticleWidth' ? styles.coverArticleWidth : article.coverImage.imageWidth === 'WideWidth' ? styles.coverWideWidth : styles.coverScreenWidth} />
+            <Img fluid={article.coverImage.image.childImageSharp.fluid} className={article.coverImage.imageWidth === 'ArticleWidth' ? styles.coverArticleWidth : article.coverImage.imageWidth === 'WideWidth' ? styles.coverWideWidth : styles.coverScreenWidth} alt={article.coverImage.image.childImageSharp.fluid}/>
             <h1 className={styles.articleWidth}>{article.title}</h1>
             <h4 className={styles.articleWidth}>{article.description}</h4>
             <div className={`${styles.authorContainer} ${styles.articleWidth}`}>

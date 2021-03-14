@@ -297,7 +297,6 @@ p {
 .article-content {
 
     span {
-        margin-top: 2rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -306,19 +305,20 @@ p {
 
         .youtube-wrapper {
             position: relative;
-
-            height: 0;
+            margin-bottom: 3rem;
 
             &.article-width {
                 width: 800px;
-                padding-bottom: 450px;
+
+                &.project {
+                    width: 1110px;
+                }
             }
 
             &.wide-width {
                 min-width: 800px;
                 max-width: 1100px;
                 width: 70%;
-                padding-bottom: 38%;
             }
 
             .youtube-video {
@@ -344,14 +344,13 @@ p {
             margin-top: 0;
 
             .youtube-wrapper {
+                margin-bottom: 2rem;
                 &.article-width {
                     width: 100%;
-                    padding-bottom: 56.25%;
                 }
 
                 &.wide-width {
                     width: 100vw;
-                    padding-bottom: 56.25%;
                     min-width: 100vw;
                 }
 
@@ -364,6 +363,92 @@ p {
                 }
 
 
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .article-content {
+
+        span {
+            .youtube-wrapper {
+                &.article-width {
+                    &.project {
+                        width: 960px;
+                    }
+                }
+    
+                &.wide-width {
+                    &.project {
+                        width: 100VW;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .article-content {
+
+        span {
+            .youtube-wrapper {
+                &.article-width {
+                    &.project {
+                        width: 690px;
+                    }
+                }
+    
+                &.wide-width {
+                    &.project {
+                        width: 100VW;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .article-content {
+
+        span {
+            .youtube-wrapper {
+                &.article-width {
+                    &.project {
+                        width: 510px;
+                    }
+                }
+    
+                &.wide-width {
+                    &.project {
+                        width: 100VW;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .article-content {
+
+        span {
+            .youtube-wrapper {
+                &.article-width {
+                    &.project {
+                        width: 90%;
+                    }
+                }
+    
+                &.wide-width {
+                    &.project {
+                        width: 100VW;
+                    }
+                }
             }
         }
     }
