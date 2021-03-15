@@ -32,7 +32,7 @@
 
 .section,
 .storySection {
-    margin: 7rem 0;
+    margin: 7rem 0 0;
 
     h1 {
         font-weight: bold;
@@ -188,10 +188,6 @@
             li {
                 margin-bottom: 0.5rem;
             }
-        }
-
-        span+p {
-            margin-top: 4rem;
         }
 
         b,

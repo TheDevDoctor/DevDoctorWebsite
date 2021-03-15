@@ -75,7 +75,6 @@ const AboutPage = ({ data }) => {
     });
 
     function handleClick(int) {
-        console.log(int)
         setState({
             selected: int
         });

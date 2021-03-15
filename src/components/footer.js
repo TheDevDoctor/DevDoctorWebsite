@@ -19,7 +19,6 @@ class Footer extends React.Component {
     }
 
     handleInputChange = event => {
-        console.log(event)
         const target = event.target
         const value = target.value
         const name = target.name

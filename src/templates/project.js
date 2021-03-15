@@ -100,13 +100,10 @@ const Project = ({ data }) => {
     function renderParagraph(props) {
         const { children } = props;
 
-        console.log(children)
-
         if (children && children[0]
             && children.length === 1
             && children[0].props
             && children[0].props.src) { // rendering media without p wrapper
-            console.log(children)
 
             // fix to lazy load, hopefully gatsby will fix this with gatsby image
             return <img src={children[0].props.src} alt={children[0].props.alt} loading="lazy" />;
@@ -268,12 +265,13 @@ const Project = ({ data }) => {
                             </Col>
                         </Row>
                     </Container>
-                </div>
 
-                <div className={styles.story} style={ project.githubLink ? null : {paddingBottom: '3rem'}}>
-                    <div className={`${styles.articleContent} article-content`}>
 
-                        <ReactMarkdown renderers={{ paragraph: renderParagraph, thematicBreak: thematicBreakRenderer, heading: headingRenderer, list: listRenderer }} allowDangerousHtml={true} transformImageUri={uri => uri.startsWith('http') ? uri : `${process.env.IMAGE_BASE_URL}${uri}`}>{project.content}</ReactMarkdown>
+                    <div className={styles.story} style={project.githubLink ? null : { paddingBottom: '3rem' }}>
+                        <div className={`${styles.articleContent} article-content`}>
+
+                            <ReactMarkdown renderers={{ paragraph: renderParagraph, thematicBreak: thematicBreakRenderer, heading: headingRenderer, list: listRenderer }} allowDangerousHtml={true} transformImageUri={uri => uri.startsWith('http') ? uri : `${process.env.IMAGE_BASE_URL}${uri}`}>{project.content}</ReactMarkdown>
+                        </div>
                     </div>
                 </div>
             </section>
