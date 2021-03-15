@@ -40,7 +40,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
     blogPosts.forEach((post, index) => {
         createPage({
-            path: `/blog/${post.node.slug}`,
+            path: `/blog/${post.node.slug}/`,
             component: ArticleTemplate,
             context: {
                 slug: post.node.slug,
@@ -51,7 +51,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
     projects.forEach((proj, index) => {
         createPage({
-            path: `/project/${proj.node.slug}`,
+            path: `/project/${proj.node.slug}/`,
             component: ProjectTemplate,
             context: {
                 slug: proj.node.slug,

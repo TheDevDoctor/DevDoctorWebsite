@@ -19,7 +19,10 @@ module.exports = {
     'gatsby-plugin-sass',
     `gatsby-plugin-scroll-reveal`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`
+      
+    },
     `gatsby-plugin-robots-txt`,
     {
       resolve: `gatsby-source-filesystem`,
