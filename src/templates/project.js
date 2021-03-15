@@ -294,7 +294,7 @@ const Project = ({ data }) => {
                                     </Col>
                                     <Col xs={8}>
                                         <div className={styles.githubTextContainer}>
-                                            <h4>PixelDr Github</h4>
+                                            <h4>{project.title} Github</h4>
                                             <p>See the code for yourself on the GitHub respository</p>
                                         </div>
                                     </Col>
