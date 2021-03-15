@@ -49,8 +49,6 @@ const Article = ({ data }) => {
       && children[0].props
       && children[0].props.src) { // rendering media without p wrapper
 
-        console.log(children)
-
       return children;
     }
 

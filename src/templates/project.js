@@ -64,6 +64,7 @@ export const query = graphql`
                 publicURL
             }
             description
+            githubLink
         }
     }`
 
@@ -98,6 +99,8 @@ const Project = ({ data }) => {
 
     function renderParagraph(props) {
         const { children } = props;
+
+        console.log(children)
 
         if (children && children[0]
             && children.length === 1
@@ -140,11 +143,11 @@ const Project = ({ data }) => {
     function getCoreProps(props) {
         var source = props['data-sourcepos'];
         /* istanbul ignore next - nodes from plugins w/o position */
-      
+
         return source ? {
-          'data-sourcepos': source
+            'data-sourcepos': source
         } : {};
-      }
+    }
 
 
     return (
@@ -267,13 +270,41 @@ const Project = ({ data }) => {
                     </Container>
                 </div>
 
-                <div className={styles.story}>
+                <div className={styles.story} style={ project.githubLink ? null : {paddingBottom: '3rem'}}>
                     <div className={`${styles.articleContent} article-content`}>
 
                         <ReactMarkdown renderers={{ paragraph: renderParagraph, thematicBreak: thematicBreakRenderer, heading: headingRenderer, list: listRenderer }} allowDangerousHtml={true} transformImageUri={uri => uri.startsWith('http') ? uri : `${process.env.IMAGE_BASE_URL}${uri}`}>{project.content}</ReactMarkdown>
                     </div>
                 </div>
             </section>
+
+            {
+                project.githubLink && <section>
+                    <div className={`title-accent ${styles.accent}`}></div>
+
+                    <div className={styles.githubContainer}>
+
+                        <a href={project.githubLink}>
+                            <div className={`${styles.githubCard} card`}>
+                                <Row noGutters={true}>
+                                    <Col>
+                                        <div className={styles.githubLogoContainer}>
+                                            <IoLogoGithub style={{ fontSize: '6rem' }}></IoLogoGithub>
+                                        </div>
+                                    </Col>
+                                    <Col xs={8}>
+                                        <div className={styles.githubTextContainer}>
+                                            <h4>PixelDr Github</h4>
+                                            <p>See the code for yourself on the GitHub respository</p>
+                                        </div>
+                                    </Col>
+                                </Row>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+            }
+
 
         </Layout>
     )
