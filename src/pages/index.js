@@ -94,18 +94,18 @@ const HomePage = ({ data }) => {
                   </div>
 
                   <div className="featured-card-header">
-                    <h3>Investing in CRISPR</h3>
-                    <p>Should you invest in CRISPR technology</p>
+                    <h3>Neuralink</h3>
+                    <p>Elon Musk's Brain-Machine Interface</p>
                     <div className="title-accent"></div>
                   </div>
                   <div className="featured-description">
                     <p>
-                      So today I want to talk about investing in CRISPR. CRISPR is a technology that can be used to edit genes and presents a plethora of possibilities in many industries.
-                      <br /><br />But a particularly key area of opportunity for CRISPR is in healthcare. CRISPR gives you the ability to edit a person's genes, and so has the potential to cure a huge range of genetic conditions such as sickle cell anaemia, and could also revolutionise the way we treat cancer.
+                    A brain-machine interface is a way for us to understand the brains signals, and then convert this into something that we can use manipulate our surroundings, such as a mobile phone or computer. In theory, the same interface could also be used to feed signals to the brain as well. Effectively augmenting our brains capabilities. 
+                    <br/><br/>Now there is a lot of examples of this functionality in science fiction, but is this something we could realistically do. Well, the answer is, yes, absolutely, but it won't be easy.
                     </p>
                   </div>
                   <div className={`${indexStyles.learnMore} ${indexStyles.youtube}`}>
-                    <a href="https://youtu.be/iurulR5wxis" target="_blank">
+                    <a href="https://www.youtube.com/watch?v=1yCqCIPKUF0&t=32s" target="_blank">
                       <p>Watch on YouTube</p>
                       <IoLogoYoutube></IoLogoYoutube>
                     </a>
@@ -115,7 +115,7 @@ const HomePage = ({ data }) => {
             </Col>
             <Col xs={{ span: 12, order: 'first' }} lg={{ span: 8, order: 'last' }} data-sal="slide-left" data-sal-duration="1000" data-sal-delay="500">
               <div className={`featured-image-container reverse`}>
-                <YoutubePreview fluidImage={data.crisprFeatured.childImageSharp.fluid} link="https://youtu.be/iurulR5wxis"></YoutubePreview>
+                <YoutubePreview fluidImage={data.neuralinkFeatured.childImageSharp.fluid} link="https://youtu.be/iurulR5wxis"></YoutubePreview>
               </div>
             </Col>
           </div>
@@ -187,7 +187,7 @@ export const query = graphql`
           }
         }
     }
-    crisprFeatured: file(relativePath: {eq: "investing-in-CRISPR.png"})
+    neuralinkFeatured: file(relativePath: {eq: "neuralink_youtube.jpg"})
     {
       childImageSharp {
           fluid(maxWidth: 560, quality: 100) {
