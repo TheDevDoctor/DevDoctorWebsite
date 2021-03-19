@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CodeBlock from './codeBlock';
 import { graphql, useStaticQuery } from "gatsby";
 import Layout from '../components/layout'
 import ReactMarkdown from 'react-markdown'
@@ -146,6 +147,12 @@ const Project = ({ data }) => {
         } : {};
     }
 
+    function createCodeBlock(props) {
+        console.log(props)
+        return <span className={`${styles.articleWidth} code-span`} style={{marginBottom: '2rem'}}>
+            <CodeBlock language={props.language} value={props.value}></CodeBlock>
+        </span>;
+    }
 
     return (
         <Layout seo={projectSEO}>
@@ -270,7 +277,7 @@ const Project = ({ data }) => {
                     <div className={styles.story} style={project.githubLink ? null : { paddingBottom: '3rem' }}>
                         <div className={`${styles.articleContent} article-content`}>
 
-                            <ReactMarkdown renderers={{ paragraph: renderParagraph, thematicBreak: thematicBreakRenderer, heading: headingRenderer, list: listRenderer }} allowDangerousHtml={true} transformImageUri={uri => uri.startsWith('http') ? uri : `${process.env.IMAGE_BASE_URL}${uri}`}>{project.content}</ReactMarkdown>
+                            <ReactMarkdown renderers={{ code: createCodeBlock, paragraph: renderParagraph, thematicBreak: thematicBreakRenderer, heading: headingRenderer, list: listRenderer }} allowDangerousHtml={true} transformImageUri={uri => uri.startsWith('http') ? uri : `${process.env.IMAGE_BASE_URL}${uri}`}>{project.content}</ReactMarkdown>
                         </div>
                     </div>
                 </div>

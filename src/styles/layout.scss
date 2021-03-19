@@ -296,11 +296,10 @@ p {
 
 .article-content {
 
-    span {
+    > span:not(.code-span) {
         display: flex;
         flex-direction: column;
         align-items: center;
-
         width: 100vw;
 
         .youtube-wrapper {
@@ -345,6 +344,7 @@ p {
 
             .youtube-wrapper {
                 margin-bottom: 2rem;
+
                 &.article-width {
                     width: 100%;
                 }
@@ -380,7 +380,7 @@ p {
                         width: 960px;
                     }
                 }
-    
+
                 &.wide-width {
                     &.project {
                         width: 100VW;
@@ -401,7 +401,7 @@ p {
                         width: 690px;
                     }
                 }
-    
+
                 &.wide-width {
                     &.project {
                         width: 100VW;
@@ -422,7 +422,7 @@ p {
                         width: 510px;
                     }
                 }
-    
+
                 &.wide-width {
                     &.project {
                         width: 100VW;
@@ -443,7 +443,7 @@ p {
                         width: 90%;
                     }
                 }
-    
+
                 &.wide-width {
                     &.project {
                         width: 100VW;
