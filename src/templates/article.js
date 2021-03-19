@@ -8,6 +8,7 @@ import styles from './article.module.scss';
 
 import { IoLogoInstagram, IoLogoTwitter, IoLogoYoutube, IoLogoGithub } from "react-icons/io5";
 import { createElement } from "react";
+import CodeBlock from "./codeBlock";
 
 export const query = graphql`
     query($slug: String!, $imageWidth: Int!) {
@@ -89,6 +90,13 @@ const Article = ({ data }) => {
     } : {};
   }
 
+  function createCodeBlock(props) {
+    console.log(props)
+    return <span className={`${styles.articleWidth} code-span`} style={{marginBottom: '2rem'}}>
+        <CodeBlock language={props.language} value={props.value}></CodeBlock>
+    </span>;
+}
+
   const articleSEO = {
     metaTitle: article.title,
     metaDescription: article.description,
@@ -132,7 +140,7 @@ const Article = ({ data }) => {
 
           <div className={`${styles.articleContent} article-content`}>
 
-            <ReactMarkdown renderers={{ paragraph: renderParagraph, thematicBreak: thematicBreakRenderer, heading: headingRenderer, list: listRenderer }} allowDangerousHtml={true} transformImageUri={uri => uri.startsWith('http') ? uri : `${process.env.IMAGE_BASE_URL}${uri}`}>{article.content}</ReactMarkdown>
+            <ReactMarkdown renderers={{ code: createCodeBlock, paragraph: renderParagraph, thematicBreak: thematicBreakRenderer, heading: headingRenderer, list: listRenderer }} allowDangerousHtml={true} transformImageUri={uri => uri.startsWith('http') ? uri : `${process.env.IMAGE_BASE_URL}${uri}`}>{article.content}</ReactMarkdown>
           </div>
 
         </div>

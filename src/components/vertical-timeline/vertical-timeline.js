@@ -7,10 +7,7 @@ import Img from 'gatsby-image';
 
 import styles from './vertical-timeline.module.scss'
 
-
-
 const VerticalTimeline = () => {
-
 
     const projects = useStaticQuery(graphql`
         query {
