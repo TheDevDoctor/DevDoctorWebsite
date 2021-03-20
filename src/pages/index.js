@@ -31,6 +31,7 @@ const HomePage = ({ data }) => {
         <Container fluid="md">
           <div className="row">
             <div className="col-12">
+              <h1>The Dev Doctor</h1>
               <h2 className="section-title">Featured</h2>
               <div className="title-accent"></div>
             </div>

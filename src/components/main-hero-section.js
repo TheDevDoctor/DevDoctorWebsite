@@ -50,7 +50,7 @@ const HeroComponent = () => {
                             <Link to="/about">
                                 <div id="designer" className={heroStyles.designerText} style={designerTextStyle}>
                                     <div id="designer-desc" className={`${heroStyles.description} ${heroStyles.left}`}>
-                                        <h1 className={`${heroStyles.jobTitle} ${heroStyles.dev}`} >{`<`}<span style={{ fontWeight: 'bolder' }}>dev</span>{`>`}</h1>
+                                        <h2 className={`${heroStyles.jobTitle} ${heroStyles.dev}`} >{`<`}<span style={{ fontWeight: 'bolder' }}>dev</span>{`>`}</h2>
                                         <p className={heroStyles.jobDescription}>Developer focussing on creating efficient and beautiful health technology platforms</p>
                                     </div>
                                 </div>
@@ -66,7 +66,7 @@ const HeroComponent = () => {
                             <Link to="/portfolio">
                                 <div id="designer" className={heroStyles.devText}>
                                     <div id="designer-desc" className={`${heroStyles.description} ${heroStyles.right}`}>
-                                        <h1 className={`${heroStyles.jobTitle}`}>doctor</h1>
+                                        <h2 className={`${heroStyles.jobTitle}`}>doctor</h2>
                                         <p className={heroStyles.jobDescription}>Emergency department doctor working in London for the UK's National Health Service</p>
                                     </div>
                                 </div>
