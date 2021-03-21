@@ -332,6 +332,24 @@ p {
     }
 }
 
+@media only screen and (max-width: 1110px) {
+    
+    .article-content {
+        > span:not(.code-span) {
+            .youtube-wrapper {
+                &.article-width {
+                    &.project {
+                        width: 100vw;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+
 @media only screen and (max-width: 860px) {
     .section-title {
         font-size: 1.8rem;
